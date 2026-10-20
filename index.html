@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a101b">
+<meta name="application-version" content="support-reactions-adaptive-1.0">
+<meta name="description" content="Support reactions, cable tensions and four-leg platforms for engineering maths. Connected assemblies, clear dimensions, varied briefs, light and dark modes.">
+<title>Statics Studio · Adaptive Civil Engineering</title>
+<script>try{let t=localStorage.getItem('statics-studio.v2.theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){}</script>
+<style>:root{color-scheme:dark;--bg:#0a101b;--surface:#111c2b;--raised:#172638;--soft:#152235;--ink:#edf4fc;--muted:#a5b6cc;--line:#2c4057;--m1:#64d6fa;--m2:#ffbf69;--force:#ff8c9b;--datum:#a6a6ff;--fixed:#78dfb0;--good:#89e8b7;--bad:#ff9daa;--accent:#8fe0f5;--on-accent:#092330;--grid:#20364c;--concrete:#293a4c;--hatch:#506175;--steel:#526b83;--metal:#a2b7ca;--label:#142337;--shadow:0 18px 60px #0003;--radius:22px;--mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;--sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+:root[data-theme="light"]{color-scheme:light;--bg:#eef3f7;--surface:#ffffff;--raised:#f1f6fa;--soft:#eaf1f7;--ink:#152b42;--muted:#52667b;--line:#c7d5e2;--m1:#007695;--m2:#945100;--force:#bd2848;--datum:#5e53be;--fixed:#157450;--good:#12663f;--bad:#b51c3a;--accent:#006e8b;--on-accent:#fff;--grid:#dce7ef;--concrete:#dbe4ec;--hatch:#97aabb;--steel:#647e94;--metal:#b9cbd9;--label:#ffffff;--shadow:0 16px 48px #28435b12}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;min-width:280px}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.45}button,input,select,summary{touch-action:manipulation}button,select,input{color:inherit}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--m1);outline-offset:4px}button{transition:background .15s,border-color .15s,transform .15s}button:not(:disabled):active{transform:translateY(1px)}[hidden]{display:none!important}p{margin:0 0 .65rem}h1,h2,h3{line-height:1.15;margin:0;letter-spacing:-.035em}h1{font-size:1.3rem}h2{font-size:clamp(1.6rem,2.4vw,2.25rem)}h3{font-size:1.15rem}a{color:var(--m1);text-underline-offset:3px}math{font-size:1.08em;color:inherit}math[display=block]{margin:.75rem 0;overflow-x:auto;max-width:100%;padding:.3rem 0}input,select{border:1px solid var(--line);background:var(--bg);border-radius:11px;padding:11px 13px;max-width:100%;min-width:0}input[type=radio]{accent-color:var(--m1);width:16px;height:16px;padding:0}input[type=checkbox]{accent-color:var(--m1)}fieldset{margin:0;padding:0;border:0;min-width:0}legend,label.form-label{font-weight:650;font-size:.85rem;display:block;margin-bottom:8px}::selection{background:var(--m1);color:var(--bg)}.icon{height:19px;width:19px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.icon-btn{display:inline-flex;gap:8px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:11px;background:var(--surface);padding:9px 12px;font-size:.8rem;font-weight:650}.icon-btn:hover:not(:disabled),.secondary:hover:not(:disabled){background:var(--raised);border-color:var(--muted)}.primary,.secondary,.quiet{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;border-radius:12px;padding:10px 16px;font-weight:700;border:1px solid transparent}.primary{background:var(--accent);color:var(--on-accent)}.primary:hover:not(:disabled){filter:brightness(1.08)}.secondary{background:var(--raised);border-color:var(--line);color:var(--ink)}.quiet{background:transparent;color:var(--muted);border-color:var(--line);font-weight:550}.quiet:hover:not(:disabled){color:var(--ink);background:var(--raised)}.small-btn{min-height:36px;font-size:.8rem;padding:7px 11px}.muted{color:var(--muted)}.micro{font-size:.75rem}.eyebrow{font-size:.69rem;letter-spacing:.17em;font-weight:750;text-transform:uppercase;color:var(--muted)}.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}.full{width:100%}.topbar{max-width:1550px;margin:auto;padding:22px 30px;display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:13px}.brandmark{width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:grid;place-items:center}.brandmark svg{width:32px;height:32px}.brand .eyebrow{font-size:.57rem;letter-spacing:.15em;margin-bottom:3px}.header-actions{display:flex;align-items:center;gap:8px}.app{max-width:1550px;margin:auto;padding:26px 30px 42px}.session-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}.session-stats{display:flex;align-items:center;gap:22px;flex-wrap:wrap}.session-item{display:flex;align-items:center;gap:9px;font-size:.84rem}.session-item strong{font-variant-numeric:tabular-nums;font-weight:650;max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.session-item .eyebrow{font-size:.62rem;letter-spacing:.09em}.stat-label{color:var(--muted);font-size:.7rem;line-height:1.4}.stat-dot{height:8px;width:8px;border-radius:50%;background:var(--fixed);box-shadow:0 0 0 5px color-mix(in srgb,var(--fixed) 9%,transparent);margin-right:4px}.timer-warning{color:var(--force)}.session-tools{display:flex;gap:8px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 326px;gap:22px;align-items:start}.left-col{min-width:0}.brief{margin:0 0 19px}.brief-top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:10px}.drawing-id{color:var(--m1);font-family:var(--mono);letter-spacing:.12em;font-size:.72rem}.brief h2{margin-bottom:10px}.brief p{max-width:86ch;font-size:.92rem;color:var(--muted)}.brief .context{color:var(--ink)}.data-strip{display:grid;grid-template-columns:1.1fr 1fr 1fr;border:1px solid var(--line);border-radius:15px;overflow:hidden;margin-bottom:15px;background:var(--surface)}.datum-cell{padding:12px 17px;min-width:0}.datum-cell+.datum-cell{border-left:1px solid var(--line)}.datum-cell .small-label{display:block;font-size:.66rem;color:var(--muted);margin-bottom:2px;letter-spacing:.07em;text-transform:uppercase}.datum-cell .value{display:block;font-size:1.12rem;font-weight:650;font-variant-numeric:tabular-nums}.datum-cell:nth-child(1) .value{color:var(--force)}.datum-cell:nth-child(2) .value{color:var(--m1)}.datum-cell:nth-child(3) .value{color:var(--m2)}.drawing-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}.drawing-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}.segmented{display:inline-flex;gap:3px;border-radius:10px;background:var(--bg);padding:3px;border:1px solid var(--line)}.segmented button{border:0;background:transparent;border-radius:7px;padding:6px 10px;font-size:.75rem;color:var(--muted);font-weight:600}.segmented button[aria-pressed=true]{background:var(--raised);color:var(--ink);box-shadow:0 1px 4px #0001}.drawing-scroll{width:100%;overflow:auto;overscroll-behavior-x:contain;scrollbar-color:var(--line) var(--surface);background:var(--surface)}.drawing-svg{display:block;width:100%;min-width:640px;height:auto;background:var(--surface);font-family:var(--sans);isolation:isolate}.drawing-svg text{user-select:none}.drawing-svg .svg-ink{fill:var(--ink)}.drawing-svg .svg-muted{fill:var(--muted)}.drawing-svg .member-part{transition:filter .2s}.drawing-svg[data-focus="1"] .member-2,.drawing-svg[data-focus="2"] .member-1{opacity:.28}.drawing-svg .member-group{cursor:pointer;outline:none}.drawing-svg .member-group:hover .member-part{filter:drop-shadow(0 0 5px currentColor)}.drawing-svg .member-group:focus-visible .member-part{filter:drop-shadow(0 0 6px currentColor)}.drawing-svg .label-box{fill:var(--label);stroke:var(--line);stroke-width:1}.drawing-svg .label-text{font-family:var(--sans);font-size:17px;font-weight:650;dominant-baseline:central}.drawing-svg .anchor-text{font-size:18px;font-weight:800;fill:var(--ink);dominant-baseline:central;text-anchor:middle}.drawing-svg .svg-title{font-family:var(--mono);font-size:12px;letter-spacing:1.3px;fill:var(--muted)}.drawing-svg .svg-caption{font-size:13px;fill:var(--muted)}.drawing-legend{display:flex;align-items:center;gap:14px;padding:13px 17px;border-top:1px solid var(--line);flex-wrap:wrap;font-size:.74rem;color:var(--muted);background:var(--raised)}.legend-member{display:inline-flex;align-items:center;gap:7px;border:0;padding:0;color:var(--ink);background:transparent;font-size:.74rem}.legend-member[aria-pressed=true]{font-weight:750;text-decoration:underline;text-underline-offset:3px}.legend-line{width:22px;display:inline-block;border-top:3px solid var(--m1);border-radius:3px;flex:none}.legend-line.m2{border-color:var(--m2);border-top-width:5px}.legend-line.ref{border-color:var(--datum);border-top-style:dashed;border-top-width:2px}.legend-box{display:inline-block;width:14px;height:14px;flex:none;border:1px solid var(--fixed);background:repeating-linear-gradient(135deg,transparent,transparent 3px,var(--line) 3px,var(--line) 5px)}.small-screen-note{display:none;font-size:.72rem;color:var(--muted);padding:8px 14px;border-top:1px solid var(--line)}.fixing-note{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:15px 17px;margin-top:13px;border:1px solid var(--line);border-radius:14px;background:var(--surface);font-size:.8rem}.fixing-note>.icon{color:var(--fixed);margin-top:2px}.fixing-note strong{font-weight:650;color:var(--ink)}.fixing-note p{margin:0;color:var(--muted)}.fixing-note p+p{margin-top:5px}.answer-panel{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--surface);position:sticky;top:20px;box-shadow:var(--shadow)}.answer-panel .eyebrow{color:var(--m1);margin-bottom:12px}.task{font-size:1.12rem;line-height:1.45;font-weight:600;margin-bottom:16px}.answer-label{font-size:.78rem;font-weight:650;margin-bottom:8px;display:block}.answer-entry{display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;background:var(--bg);overflow:hidden}.answer-entry:focus-within{outline:2px solid var(--m1);outline-offset:3px}.answer-entry input{border:0;border-radius:0;font-size:1.6rem;font-family:var(--mono);font-variant-numeric:tabular-nums;width:100%;padding:15px 14px;outline:none!important;background:transparent}.answer-entry .unit{padding-right:13px;font-size:.86rem;color:var(--muted)}.precision{font-size:.73rem;color:var(--muted);margin:10px 0 16px;line-height:1.6}.answer-actions{display:grid;gap:9px}.feedback{margin-top:15px;padding:13px;border-radius:12px;background:var(--raised);font-size:.85rem;line-height:1.5;border:1px solid var(--line)}.feedback.ok{border-color:color-mix(in srgb,var(--good) 60%,var(--line));color:var(--good)}.feedback.no{border-color:color-mix(in srgb,var(--bad) 60%,var(--line));color:var(--bad)}.feedback strong{display:block;font-size:.92rem;margin-bottom:3px}.feedback .range{display:block;font-size:.74rem;color:var(--muted);margin-top:5px}.helper-tools{margin-top:19px;padding-top:17px;border-top:1px solid var(--line);display:grid;gap:10px}.calculator-launch{justify-content:space-between}.hint-box{border:1px solid var(--line);border-radius:12px;background:var(--surface);margin-top:12px;overflow:hidden}summary{cursor:pointer;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:650;font-size:.81rem;list-style:none}summary::-webkit-details-marker{display:none}summary:after{content:'+';font-size:1.1rem;color:var(--muted)}details[open]>summary:after{content:'−'}.hint-content{padding:0 14px 14px;color:var(--muted);font-size:.79rem}.hint-content p:last-child{margin-bottom:0}.hint-content math{color:var(--ink)}.workings{padding:0 17px 17px;font-size:.84rem}.workings .step{padding:13px 0;border-top:1px solid var(--line)}.workings .step:first-child{border-top:0}.step-heading{display:flex;align-items:center;gap:9px;font-weight:650;margin-bottom:8px}.step-number{width:22px;height:22px;flex:none;display:inline-grid;place-items:center;border-radius:6px;background:var(--raised);color:var(--m1);font-family:var(--mono);font-size:.72rem}.workings p{color:var(--muted);font-size:.8rem}.workings .result-box{padding:13px;background:var(--raised);border-radius:12px;color:var(--ink);font-size:1rem}.session-footer{display:flex;justify-content:space-between;gap:15px;margin-top:25px;flex-wrap:wrap;color:var(--muted);font-size:.72rem}.text-btn{border:0;background:transparent;color:var(--muted);font-size:inherit;text-decoration:underline;text-underline-offset:4px;padding:0}.start-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(330px,.8fr);gap:32px;align-items:start}.start-intro{padding-top:12px}.start-intro h2{font-size:clamp(2.1rem,4.2vw,4rem);max-width:14ch;line-height:1.08;letter-spacing:-.055em;margin:15px 0 17px}.start-intro h2 span{color:var(--m1)}.start-intro>p{max-width:57ch;color:var(--muted);font-size:.95rem}.preview-card{border:1px solid var(--line);border-radius:20px;margin-top:24px;overflow:hidden;background:var(--surface)}.preview-card .drawing-svg{min-width:0}.preview-card .preview-caption{padding:11px 17px;border-top:1px solid var(--line);color:var(--muted);font-size:.72rem;display:flex;gap:9px;align-items:center}.setup-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}.setup-card h3{font-size:1.4rem;margin-bottom:6px}.setup-card .setup-sub{color:var(--muted);font-size:.81rem;margin-bottom:23px}.form-group{margin-bottom:20px}.form-group input[type=text]{width:100%}.mode-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.radio-card{display:flex;align-items:flex-start;gap:9px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);cursor:pointer;font-size:.82rem;line-height:1.5}.radio-card input{margin:4px 0 0}.radio-card:has(input:checked){border-color:var(--m1);background:color-mix(in srgb,var(--m1) 5%,var(--surface))}.radio-card strong{display:block;font-size:.82rem;font-weight:650}.radio-card small{font-size:.69rem;color:var(--muted);display:block}.time-options{display:flex;flex-wrap:wrap;gap:7px}.time-pill{display:flex;gap:6px;align-items:center;border:1px solid var(--line);border-radius:9px;background:var(--bg);padding:7px 9px;cursor:pointer;font-size:.72rem}.time-pill input{margin:0;width:13px;height:13px}.time-pill:has(input:checked){border-color:var(--m1)}.two-fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.two-fields input,.two-fields select{width:100%}.setup-note{border-top:1px solid var(--line);padding-top:15px;margin-top:17px;font-size:.72rem;color:var(--muted);line-height:1.7}.form-error{color:var(--bad);font-size:.8rem;margin-bottom:12px}.summary-card{max-width:870px;margin:30px auto;padding:32px;background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}.summary-card h2{margin:8px 0 12px}.summary-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}.summary-stat{padding:19px;background:var(--raised);border-radius:14px}.summary-stat strong{display:block;font-size:1.9rem;line-height:1.2;color:var(--m1);font-family:var(--mono);font-weight:550}.summary-stat span{font-size:.75rem;color:var(--muted)}.summary-info{font-size:.85rem;color:var(--muted);margin-bottom:22px}.review-scroll{overflow:auto;max-height:420px}.review-table{width:100%;border-collapse:collapse;font-size:.78rem;text-align:left;min-width:530px}.review-table th{color:var(--muted);font-weight:600;background:var(--raised)}.review-table td,.review-table th{padding:10px 12px;border-bottom:1px solid var(--line)}.review-table .correct{color:var(--good)}.review-table .incorrect{color:var(--bad)}.summary-actions{display:flex;gap:10px;margin-top:23px;flex-wrap:wrap}dialog{color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 100px #0007;padding:0;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px)}dialog::backdrop{background:#040a14bc;backdrop-filter:blur(6px)}.modal-header{padding:18px 21px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:15px}.modal-header h2{font-size:1.15rem;letter-spacing:-.02em}.modal-content{padding:21px;overflow:auto}.modal-content p{font-size:.87rem;color:var(--muted)}.modal-content h3{font-size:.98rem;margin:20px 0 10px}.modal-content h3:first-child{margin-top:0}.info-dialog{width:690px}.close-btn{width:35px;height:35px;padding:7px;border:1px solid var(--line);background:var(--raised);border-radius:9px;display:grid;place-items:center;flex:none}.close-btn .icon{width:16px;height:16px}.model-points{display:grid;gap:9px}.model-point{border:1px solid var(--line);background:var(--raised);padding:13px 15px;border-radius:12px;font-size:.83rem}.model-point strong{display:block;margin-bottom:4px}.source-notes{border-top:1px solid var(--line);margin-top:20px;padding-top:15px}.source-notes p{font-size:.74rem}.zoom-dialog{width:1320px}.zoom-toolbar{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.zoom-toolbar button{min-width:35px}.zoom-viewport{width:100%;max-height:calc(100dvh - 140px);height:min(70vh,850px);overflow:auto;background:var(--surface);cursor:grab;touch-action:pan-x pan-y}.zoom-viewport.dragging{cursor:grabbing}.zoom-viewport .drawing-svg{min-width:0;max-width:none}.zoom-footer{padding:9px 18px;font-size:.73rem;color:var(--muted);border-top:1px solid var(--line)}.new-dialog{width:500px}.new-dialog .setup-card{border:0;box-shadow:none}.new-warning{font-size:.78rem;padding:12px;border:1px solid var(--line);background:var(--raised);border-radius:11px;margin-bottom:17px;color:var(--muted)}.calc{position:fixed;right:24px;bottom:22px;width:324px;max-width:calc(100vw - 16px);z-index:50;border:1px solid var(--line);border-radius:19px;background:var(--surface);box-shadow:0 18px 80px #0006;overflow:hidden}.calc-head{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;cursor:move;background:var(--raised);border-bottom:1px solid var(--line);touch-action:none}.calc-head strong{font-size:.81rem}.calc-head .degree{font-family:var(--mono);font-size:.63rem;color:var(--m1);margin-left:8px;border:1px solid var(--line);padding:3px 5px;border-radius:5px}.calc-body{padding:12px}.calc-input{width:100%;text-align:right;font-family:var(--mono);font-size:1.06rem;min-height:49px}.calc-output{min-height:33px;text-align:right;font-family:var(--mono);font-size:.8rem;color:var(--m1);padding:7px 2px}.calc-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.calc-keys button{height:38px;min-height:0;display:grid;place-items:center;background:var(--raised);border:1px solid var(--line);border-radius:8px;font-size:.86rem;font-weight:600;padding:5px}.calc-keys .function-key{font-size:.73rem;color:var(--m1)}.calc-keys .equals{background:var(--accent);color:var(--on-accent)}.calc-foot{margin-top:8px;color:var(--muted);font-size:.65rem;text-align:center}.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:100;background:var(--raised);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 17px;box-shadow:var(--shadow);max-width:calc(100% - 32px);font-size:.84rem}.noscript{padding:25px;color:var(--bad)}
+@media(min-width:1700px){.workspace{grid-template-columns:minmax(0,1fr) 350px}.answer-panel{padding:26px}}
+@media(max-width:1120px){.workspace{grid-template-columns:minmax(0,1fr) 294px;gap:16px}.app{padding:22px 22px 32px}.topbar{padding:18px 22px}.answer-panel{padding:18px}.session-stats{gap:16px}.start-layout{gap:23px}}
+@media(max-width:950px){.workspace{grid-template-columns:1fr}.answer-panel{position:static;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}.answer-main{grid-row:1/4}.helper-tools{margin-top:0;padding-top:0;border-top:0}.answer-panel>.hint-box{margin-top:10px}.start-layout{grid-template-columns:1fr 360px;gap:22px}.start-intro h2{font-size:2.7rem}.start-intro .preview-card{margin-top:20px}.session-tools{margin-left:auto}}
+@media(max-width:720px){.topbar{padding:14px 16px}.app{padding:19px 15px 27px}.brandmark{width:38px;height:38px}.brand{gap:9px}.brand h1{font-size:1.06rem}.brand .eyebrow{font-size:.49rem}.header-actions .hide-mobile{display:none}.header-actions .icon-btn{padding:9px}.header-actions{gap:6px}.start-layout{grid-template-columns:1fr}.start-intro{padding-top:0}.start-intro h2{font-size:2.8rem;max-width:18ch}.start-intro .preview-card{display:none}.setup-card{padding:22px}.session-bar{gap:13px}.session-stats{gap:12px;width:100%;justify-content:space-between}.session-item{font-size:.79rem}.session-item strong{max-width:94px}.session-item .icon{display:none}.session-tools{margin:0}.brief h2{font-size:1.72rem}.brief p{font-size:.85rem}.data-strip{margin-bottom:12px}.datum-cell{padding:11px 12px}.datum-cell .value{font-size:1.03rem}.datum-cell .small-label{font-size:.56rem}.drawing-toolbar{padding:11px}.small-screen-note{display:block}.drawing-legend{font-size:.69rem;gap:10px;padding:12px}.legend-member{font-size:.69rem}.fixing-note{font-size:.75rem}.answer-panel{gap:0 18px;padding:19px}.task{font-size:1.04rem}.summary-card{margin:10px 0;padding:23px}.summary-stats{gap:8px}.summary-stat{padding:13px}.summary-stat strong{font-size:1.4rem}.modal-header{padding:13px 15px}.zoom-dialog .modal-header{flex-wrap:wrap;gap:8px}.zoom-dialog .modal-header h2{font-size:.95rem}.zoom-toolbar{gap:4px}.zoom-toolbar .small-btn{font-size:.72rem}.zoom-viewport{max-height:calc(100dvh - 170px);height:65dvh}.info-dialog .modal-content{padding:17px}}
+@media(max-width:480px){.answer-panel{display:block}.helper-tools{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}.session-item .stat-label{font-size:.62rem}.session-item strong{font-size:.77rem;max-width:75px}.session-stats{gap:6px}.stat-dot{display:none}.session-tools{width:100%;display:grid;grid-template-columns:1fr 1fr}.session-tools button{width:100%}.datum-cell{padding:10px}.datum-cell .value{font-size:.93rem}.data-strip{grid-template-columns:1.1fr 1fr 1fr}.drawing-toolbar>.icon-btn{font-size:.72rem;padding:7px}.segmented button{font-size:.7rem;padding:5px 8px}.fixing-note{padding:12px;gap:9px}.fixing-note>.icon{width:16px}.summary-stats{grid-template-columns:1fr 1fr}.summary-stat:last-child{grid-column:1/-1}.summary-stat:last-child strong{display:inline-block;margin-right:10px}.form-group{margin-bottom:18px}.two-fields{gap:12px}.calc{right:8px;bottom:8px}.setup-card{padding:19px}.start-intro h2{font-size:2.35rem}.start-intro>p{font-size:.86rem}.modal-content p{font-size:.8rem}.mode-options{gap:6px}.radio-card{padding:10px}.header-actions #helpBtn{display:none}.brief-top{margin-bottom:8px}}
+@media(max-width:340px){.app{padding:16px 9px 24px}.topbar{padding:12px 9px}.header-actions{gap:4px}.brand h1{font-size:.95rem}.brandmark{width:32px;height:32px}.brandmark svg{width:26px;height:26px}.brand .eyebrow{font-size:.42rem}.mode-options{grid-template-columns:1fr}.two-fields{grid-template-columns:1fr}.data-strip .value{font-size:.82rem}.datum-cell{padding:9px 7px}.drawing-toolbar{gap:7px}.legend-member{font-size:.66rem}.session-item strong{max-width:66px}.setup-card{padding:16px}.answer-panel{padding:16px}.summary-card{padding:17px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+@media print{.topbar,.session-bar,.start-layout,.session-footer,.answer-panel,.drawing-toolbar,.calc,.toast,dialog,.summary-actions{display:none!important}body{background:#fff;color:#111}.app{padding:0}.workspace{display:block}.drawing-svg{min-width:0}.drawing-card{box-shadow:none}.summary-card{box-shadow:none;border:1px solid #ccc}.review-scroll{max-height:none;overflow:visible}}
+.calc{max-height:calc(100dvh - 16px);overflow-y:auto;overscroll-behavior:contain}.calc-head{position:sticky;top:0;z-index:1}.calc-input{font-size:16px}.calc-output{overflow-wrap:anywhere}.preview-card .member-group{cursor:default}
+
+.session-item strong{display:block}.summary-info{overflow-wrap:anywhere}.drawing-view-tools{display:flex;gap:6px;align-items:center}.fit-btn{display:none}.drawing-scroll.fit-view .drawing-svg{min-width:0}
+@media(max-width:720px){.fit-btn{display:inline-flex}.drawing-view-tools .icon-btn{padding:7px 9px;font-size:.72rem}.drawing-view-tools .icon{width:16px;height:16px}}
+
+/* Support-Reactions edition: given-value groups adapt to each retained family. */
+.data-strip{grid-template-columns:repeat(auto-fit,minmax(135px,1fr));background:var(--line);gap:1px;border-radius:15px}
+.datum-cell{border:0!important;background:var(--surface);padding:12px 14px}
+.datum-cell .small-label{font-size:.63rem;letter-spacing:.045em}
+.datum-cell .value{font-size:1.06rem;white-space:nowrap}
+.datum-cell .value math{font-size:1em}
+#statement p{margin:0 0 .3rem;font-size:.88rem;line-height:1.6;color:var(--muted)}
+#statement p:last-child{margin:0}
+#statement math{white-space:nowrap;font-size:1em}
+#assumptionsText{margin-top:8px}#drawingNote{margin-top:6px;color:var(--ink)}
+.drawing-svg .member-group:hover .member-part{filter:drop-shadow(0 0 3px var(--accent))}
+.drawing-svg .annotation{pointer-events:none}.drawing-svg .svg-caption{font-size:13px}
+#hintContent math{font-size:1.03em;overflow-x:auto}#hintContent p:last-child{margin-top:9px}
+@media(max-width:720px){.data-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.datum-cell{padding:10px 12px}.datum-cell .value{font-size:1.05rem}.datum-cell:last-child:nth-child(odd){grid-column:1/-1}.datum-cell .small-label{font-size:.63rem}.drawing-legend{gap:10px 16px}.brief h2{font-size:1.75rem}.start-intro h2{max-width:20ch}.session-footer>span{max-width:42ch}}
+@media(max-width:340px){.datum-cell{padding:9px}.datum-cell .value{font-size:.94rem}#statement p{font-size:.82rem}.drawing-toolbar{gap:6px}.drawing-view-tools .icon-btn{padding:7px}.segmented button{padding:5px 7px}}
+
+/* Adaptive additions share the original studio palette and drafting system. */
+.teacher-stats{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.teacher-stats span{padding:10px 13px;border:1px solid var(--line);border-radius:10px;background:var(--raised);font-size:.8rem}.teacher-stats strong{color:var(--m1)}.teacher-start{padding:15px;border:1px solid var(--line);border-radius:12px;margin-bottom:18px;background:var(--raised)}.teacher-start select{width:100%;margin-bottom:10px}.support-prompt{padding:12px;border:1px solid var(--m1);border-radius:10px;background:var(--raised);color:var(--ink);margin-bottom:12px}.support-prompt strong{display:block;margin-bottom:5px}.review-link{background:none;border:0;color:var(--m1);text-align:left;font-size:inherit;text-decoration:underline;text-underline-offset:3px;padding:0}.review-split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px}.review-split .drawing-svg{min-width:0}.review-result{padding:14px;border:1px solid var(--line);border-radius:12px;margin-bottom:17px;background:var(--raised)}#teacherDialog .modal-content,#reviewDialog .modal-content{max-height:calc(100dvh - 110px)}.answer-entry .unit{white-space:nowrap}.data-strip{grid-template-columns:repeat(auto-fit,minmax(135px,1fr))}
+@media(max-width:720px){.segmented button{font-size:.66rem;padding:6px}.drawing-toolbar{gap:9px}.review-split{display:block}.review-split .workings{padding:16px 0}.data-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.teacher-start{padding:12px}.teacher-stats{gap:6px}}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></symbol>
+<symbol id="i-full" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.2"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 5h8v4H8zM8 13h1m3 0h1m3 0h.1M8 17h1m3 0h1m3 0h.1"/></symbol>
+<symbol id="i-anchor" viewBox="0 0 24 24"><path d="M2 20h20M5 20v-4h14v4M8 16V9a4 4 0 0 1 8 0v7M3 23l3-3m3 3 3-3m3 3 3-3"/><circle cx="12" cy="9" r="1.5"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 22v-2a8 8 0 0 1 16 0v2"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 10a8 8 0 1 0 0 5M20 3v7h-7"/></symbol>
+</defs></svg>
+<header class="topbar">
+<div class="brand"><div class="brandmark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M5 17H35" fill="none" stroke="var(--ink)" stroke-width="4"/><path d="M9 19 4 28H14ZM31 19 26 27H36Z" fill="var(--steel)" stroke="var(--m1)" stroke-width="1.5"/><path d="M20 3V13m-3-3 3 3 3-3" stroke="var(--force)" stroke-width="2" fill="none"/><circle cx="28" cy="29" r="1.5" fill="var(--m2)"/><circle cx="34" cy="29" r="1.5" fill="var(--m2)"/><path d="M2 32H38" stroke="var(--fixed)" stroke-width="2"/></svg></div><div><div class="eyebrow">T Level · Civil engineering maths</div><h1>Statics Studio</h1></div></div>
+<nav class="header-actions" aria-label="Display and help"><button type="button" class="icon-btn" id="themeBtn" aria-label="Switch to light mode"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg><span class="hide-mobile" id="themeLabel">Light mode</span></button><button type="button" class="icon-btn" id="fsBtn" aria-label="Enter full screen"><svg class="icon" aria-hidden="true"><use href="#i-full"/></svg><span class="hide-mobile" id="fsLabel">Full screen</span></button><button type="button" class="icon-btn" id="helpBtn" aria-label="Open model notes"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></button></nav>
+</header>
+<main class="app">
+<section id="startScreen" class="start-layout" aria-labelledby="startTitle">
+<div class="start-intro"><div class="eyebrow">Civil engineering / Applied statics</div><h2 id="startTitle">Find the reaction.<br><span>Follow the load.</span></h2><p>Explore engineering assemblies with connected bearings, anchored cables and grounded support legs.</p><p>Read the drawing, follow the load path and apply equilibrium to bearings, cables and support legs. Progress into moments and changing load profiles without quadratic equations.</p><div class="preview-card"><div id="previewDrawing"></div><div class="preview-caption"><svg class="icon" aria-hidden="true"><use href="#i-anchor"/></svg>Connected structures. Clear dimensions. Real engineering contexts.</div></div></div>
+<div id="setupHome"><section class="setup-card" id="setupCard" aria-labelledby="setupTitle"><h3 id="setupTitle">Set up your session</h3><p class="setup-sub">Your next calculation responds to your last answer.</p><div id="newWarning" class="new-warning" hidden>Starting a new session resets the score and adaptive learning record. A running timer continues until you start again.</div>
+<form id="setupForm" novalidate>
+<div class="form-group"><label for="nameInput" class="form-label">Your name <span class="muted">(optional)</span></label><input id="nameInput" type="text" maxlength="70" placeholder="Student name" autocomplete="name"></div>
+<fieldset class="form-group"><legend>Session mode</legend><div class="mode-options"><label class="radio-card"><input type="radio" name="mode" value="timed" checked><span><strong>Timed practice</strong><small>Work at your own pace.</small></span></label><label class="radio-card"><input type="radio" name="mode" value="target"><span><strong>Target practice</strong><small>Reach a correct-answer goal.</small></span></label></div></fieldset>
+<fieldset class="form-group" id="timedField"><legend>Time limit</legend><div class="time-options"><label class="time-pill"><input type="radio" name="tlimit" value="600">10 min</label><label class="time-pill"><input type="radio" name="tlimit" value="1200" checked>20 min</label><label class="time-pill"><input type="radio" name="tlimit" value="1800">30 min</label><label class="time-pill"><input type="radio" name="tlimit" value="0">Unlimited</label></div></fieldset>
+<div class="two-fields"><div class="form-group" id="targetField" hidden><label class="form-label" for="targetInput">Correct-answer target</label><input id="targetInput" type="number" min="1" max="1000" step="1" value="10"></div><div class="form-group"><label class="form-label" for="qtyInput">Questions per batch</label><select id="qtyInput"><option value="8">8 questions</option><option value="10" selected>10 questions</option><option value="12">12 questions</option><option value="15">15 questions</option></select></div></div>
+<div class="form-error" id="setupError" role="alert" hidden></div><button class="primary full" id="startBtn" type="submit">Start session<svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button><button type="button" id="cancelSetupBtn" class="quiet full" style="margin-top:9px" hidden>Keep current session</button>
+</form><div class="setup-note">Retains beams, cable joints and four-leg platforms. Adds moments, partial loading, overhangs and triangular load profiles as you progress.<br>Incorrect answers lead to a fresh question using the same method. Batches are generated one question at a time.<br>Answers: <strong>±1.00</strong> of the displayed unit, in <strong>0.01</strong> steps.</div></section></div>
+</section>
+<section id="sessionScreen" hidden aria-label="Engineering practice session">
+<div class="session-bar"><div class="session-stats"><div class="session-item"><span class="stat-dot" aria-hidden="true"></span><div><div class="stat-label">Engineer</div><strong id="whoName">Student</strong></div></div><div class="session-item"><svg class="icon muted" aria-hidden="true"><use href="#i-target"/></svg><div><div class="stat-label" id="modeTxt">Timed practice</div><strong id="targetTxt">Question 1</strong></div></div><div class="session-item"><svg class="icon muted" aria-hidden="true"><use href="#i-clock"/></svg><div><div class="stat-label" id="timerLabel">Time remaining</div><strong class="mono" id="timeTxt">20:00</strong></div></div><div class="session-item"><div><div class="stat-label">Correct / checked</div><strong class="mono" id="scoreTopVal">0 / 0</strong></div></div></div><div class="session-tools"><button type="button" class="quiet small-btn" id="newBtn"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg>New questions</button><button type="button" class="quiet small-btn" id="finishBtn">Finish session</button></div></div>
+<div class="workspace">
+<div class="left-col"><section class="brief" aria-labelledby="qTitle"><div class="brief-top"><span class="drawing-id" id="drawingId">ENGINEERING BRIEF / 01</span><span class="eyebrow" id="progress">Question 1</span></div><h2 id="qTitle"></h2><p class="context" id="context"></p><div id="statement"></div></section>
+<div class="data-strip" id="dataStrip" aria-label="Given values"></div>
+<section class="drawing-card" aria-label="Engineering drawing"><div class="drawing-toolbar"><div class="segmented" aria-label="Diagram view"><button id="assemblyBtn" type="button" aria-pressed="true">Assembly</button><button id="forcesBtn" type="button" aria-pressed="false">Force overlay</button><button id="equivalentBtn" type="button" aria-pressed="false" hidden>Equivalent loads</button></div><div class="drawing-view-tools"><button class="icon-btn fit-btn" id="fitDrawingBtn" type="button" aria-label="Fit the whole diagram to the screen">Fit</button><button class="icon-btn" id="enlargeBtn" type="button"><svg class="icon" aria-hidden="true"><use href="#i-full"/></svg>Enlarge</button></div></div><div id="drawingScroll" class="drawing-scroll" tabindex="0" aria-label="Engineering diagram; scroll horizontally on a narrow screen"><div id="drawing"></div></div><div class="small-screen-note" id="smallScreenNote">Scroll sideways to inspect the drawing, or select Enlarge.</div><div class="drawing-legend"><button type="button" class="legend-member" data-focus="1" aria-pressed="false"><span class="legend-line"></span><span id="legend1">M1 · cable</span></button><button type="button" class="legend-member" data-focus="2" aria-pressed="false"><span class="legend-line m2"></span><span id="legend2">M2 · tie rod</span></button><span><span class="legend-line ref"></span> Reference / dimensions</span><span style="display:inline-flex;align-items:center;gap:7px"><span class="legend-box"></span>Fixed structure</span></div></section>
+<div class="fixing-note"><svg class="icon" aria-hidden="true"><use href="#i-anchor"/></svg><div><p id="fixingText"></p><p id="assumptionsText"></p><p id="drawingNote"></p></div></div>
+<details class="hint-box" id="workingDetails" hidden><summary>Worked solution</summary><div id="workedSolution" class="workings"></div></details>
+</div>
+<aside class="answer-panel" aria-labelledby="taskTitle"><div class="answer-main"><div class="eyebrow">Your calculation</div><h3 class="task" id="taskTitle"></h3><form id="answerForm" novalidate><label for="ansVal" class="answer-label" id="answerLabel">Requested force</label><div class="answer-entry"><input id="ansVal" type="number" inputmode="decimal" min="-1000000000" max="1000000000" step="0.01" autocomplete="off" placeholder="0.00" aria-describedby="precisionNote fbAns"><span class="unit" id="unitOut">kN</span></div><p class="precision" id="precisionNote">Round to 2 decimal places.<br>Answers within <strong>±1.00 kN</strong> are accepted, in <strong>0.01 kN</strong> steps.<br>Whole numbers do not need “.00”.</p><div class="answer-actions"><button type="submit" class="primary full" id="checkBtn">Check answer<svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></button><button type="button" class="secondary full" id="nextBtn" disabled>Next question<svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button></div></form><div id="fbAns" class="feedback" role="status" aria-live="polite" aria-atomic="true" hidden></div></div>
+<div class="helper-tools"><button class="secondary calculator-launch" id="calcBtn" type="button" aria-expanded="false" aria-controls="calculator"><span style="display:flex;align-items:center;gap:8px"><svg class="icon" aria-hidden="true"><use href="#i-calc"/></svg>Open calculator</span><span class="micro mono muted">DEG</span></button></div>
+<details class="hint-box" id="hintDetails"><summary>Equations to use</summary><div class="hint-content" id="hintContent"></div></details>
+<details class="hint-box" id="whyDetails"><summary>Why this matters</summary><div class="hint-content"><p id="whyText"></p><p>These are idealised learning models, not design approvals or safe working loads.</p><button type="button" class="text-btn model-link">Read the model notes</button></div></details>
+</aside>
+</div>
+</section>
+<section id="endScreen" class="summary-card" hidden aria-labelledby="endTitle"><div class="eyebrow">Session summary</div><h2 id="endTitle">Session complete</h2><p id="endMsg" class="muted"></p><div class="summary-stats"><div class="summary-stat"><strong id="sumScore">0 / 0</strong><span>Correct / checked</span></div><div class="summary-stat"><strong id="sumAccuracy">—</strong><span>Accuracy</span></div><div class="summary-stat"><strong id="sumTime">0:00</strong><span>Time used</span></div></div><p id="summaryInfo" class="summary-info"></p><details class="hint-box"><summary>Review your answers</summary><div class="review-scroll"><table class="review-table"><thead><tr><th>Brief</th><th>Requested quantity</th><th>Your answer</th><th>Calculated answer</th><th>Result</th></tr></thead><tbody id="reviewBody"></tbody></table></div></details><div class="summary-actions"><button type="button" class="primary" id="restartBtn">Start another session<svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button></div></section>
+<footer class="session-footer"><span>Civil engineering statics · Forces in kN · Moments in kN·m</span><span style="display:flex;gap:18px;flex-wrap:wrap"><button type="button" class="text-btn" id="teacherBtn">Teacher view</button><button type="button" class="text-btn model-link">Model notes &amp; sources</button></span></footer>
+</main>
+<dialog id="modelDialog" class="info-dialog" aria-labelledby="modelTitle"><header class="modal-header"><h2 id="modelTitle">Understand the engineering model</h2><button class="close-btn" data-close="modelDialog" type="button" aria-label="Close model notes"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header><div class="modal-content"><div class="model-points">
+<div class="model-point"><strong>Supported, not floating</strong>The beam rests on a pin at A and a roller at B. Each bearing transfers force to its concrete foundation. A pin permits rotation; it is not a built-in, moment-resisting end. With only vertical applied loads, the horizontal reaction is zero. <a href="https://pressbooks.library.upei.ca/statics/chapter/reaction-forces/" target="_blank" rel="noopener noreferrer">Support reference</a>.</div>
+<div class="model-point"><strong>Static equilibrium</strong>There is no resultant force and no resultant moment. Use forces in kN and lengths in m; moments are then in kN·m. <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mo>Σ</mo><msub><mi>F</mi><mi>x</mi></msub><mo>=</mo><mn>0</mn><mspace width="1em"/><mo>Σ</mo><msub><mi>F</mi><mi>y</mi></msub><mo>=</mo><mn>0</mn><mspace width="1em"/><mo>Σ</mo><mi>M</mi><mo>=</mo><mn>0</mn></mrow></math></div>
+<div class="model-point"><strong>A full-span uniform load</strong>Replace a uniformly distributed load w over length L by a resultant W = wL at midspan. Keep full precision until the final answer. The stated UDL is the entire distributed load included in that question. <a href="https://engineeringstatics.org/distributed-loads.html" target="_blank" rel="noopener noreferrer">Distributed-load reference</a>.</div>
+<div class="model-point"><strong>Two-cable suspension</strong>Two cables meet at the pin joint J. Their ends attach to bolted overhead anchors. The overhead slab is connected to columns and foundations. Angles are measured from the horizontal. Cable self-weight is neglected; the given suspended load includes its lifting attachment.</div>
+<div class="model-point"><strong>Four legs, two symmetric pairs</strong>The load acts on the longitudinal centreline of a rigid, level platform. The four legs are identical, symmetrically positioned and all in contact with the floor. The left legs are A and D; the right legs are B and C. Front–rear symmetry gives equal forces within each pair. The original platform questions neglect platform self-weight. Where a deck weight G is stated, include it at the centre. Only vertical leg forces enter this simplified calculation.</div>
+<div class="model-point"><strong>Read the distance origin</strong>Some dimensions start at A, some start at B, and some are consecutive segments. For platform questions, the given distance may start at either end. Use the labelled dimensions, not a ruler. Cable angles agree with the cable geometry; hardware sizes and the platform perspective are illustrative.</div>
+<div class="model-point"><strong>Assembly and force overlay</strong>The assembly view shows the installed structure. The overlay adds reaction or tension arrows without removing its supports. It is not a separate free-body diagram. Solid equipment drawings represent the applied loads, not additional unknown loads.</div>
+<div class="model-point"><strong>Triangular and trapezoidal loading</strong>A triangular load is uniformly <em>varying</em>, not uniformly distributed. Its equivalent force is the triangular area and acts one-third of the loaded length from the larger end. A trapezoid can be split into a rectangle and a triangle, each with its own equivalent force. Any offset of the loaded region must be added when measuring from A. <a href="https://engineeringstatics.org/distributed-loads.html" target="_blank" rel="noopener noreferrer">Area and centroid reference</a>.</div>
+<div class="model-point"><strong>Applied moment, support moment and bending moment</strong>The net external moment on a complete equilibrium system is zero. A question asking for the moment of the <em>applied loads only</em> deliberately excludes the support reactions. A built-in end can provide a resisting moment. A section calculation asks for the internal bending moment at the marked cut, not a reaction at a support.</div>
+<div class="model-point"><strong>Known geometry; linear calculations only</strong>The additional questions use fixed lengths and positions, areas of rectangles and triangles, trigonometry and linear equilibrium. No question asks you to solve a quadratic equation, integrate a load function, analyse an indeterminate frame or find an unknown span under a distributed load. Triangular and trapezoidal profiles are original teaching extensions, not a claim about a particular examination question.</div>
+<div class="model-point"><strong>Overhangs and self-weight</strong>An overhanging beam has a section beyond its bearing; use the bearing spacing in the reaction moment equation. Every generated bearing remains in compression. A stated full-length UDL includes beam self-weight. Other isolated load cases explicitly neglect it. Added platform-weight and rigging questions show the extra weight separately.</div>
+<div class="model-point"><strong>Equivalent-load view</strong>This optional view replaces the distributed load by its equivalent force or forces. Do not count both the original load profile and its replacement. Unknown resultant magnitudes remain labelled with a question mark. Supports remain visible; this is an explanatory overlay, not a detached free-body diagram.</div>
+<div class="model-point"><strong>Practice that responds to your answers</strong>Incorrect work leads to a fresh calculation of the same type. Repeated difficulty brings a first-step prompt. Independent success unlocks slightly richer loading arrangements, with earlier skills revisited. Detailed progression and starting-point settings are in Teacher view, not on the question screen.</div>
+<div class="model-point"><strong>Practice marking</strong>The calculated answer is rounded to 2 decimal places. The inclusive acceptance band is 1.00 below to 1.00 above this answer in the displayed unit (kN or kN·m), checked in 0.01 steps. Whole numbers do not need a decimal suffix. This educational marking allowance is not a construction tolerance, safety factor or permissible design error.</div>
+</div><h3>Scope and references</h3><p>This is focused T Level engineering-maths practice, not a complete T Level course or an official examination paper.</p><p>All five content families and the original briefs from the supplied <em>Support Reactions &amp; Cable Tensions</em> studio are retained. This edition adds civil-engineering briefs and 14 calculation types using the same equilibrium principles. Difficulty changes through load arrangement and the requested calculation, not merely larger numbers.</p><div class="source-notes"><p><a href="https://qualifications.pearson.com/content/dam/pdf/TLevels/construction/2025/specification-and-sample-assessments/tlevel-design-surveying-and-planning-for-construction-gen2.pdf" target="_blank" rel="noopener noreferrer">Pearson: T Level Design, Surveying and Planning for Construction, April 2026, Civil Engineering, printed page 98</a> — context for beam reactions, combined loading, moments and equilibrium. This app covers a selected practice subset, not the entire qualification.</p><p>All question generation, diagrams, marking and calculator functions run inside this file. Only the display theme is stored on this device. The adaptive record lasts for this session; a page reload or a new session resets it. Teacher starting-point changes apply to the next new session only. An internet connection is needed only to open the optional reference links.</p></div></div></dialog>
+<dialog id="zoomDialog" class="zoom-dialog" aria-labelledby="zoomTitle"><header class="modal-header"><h2 id="zoomTitle">Engineering drawing</h2><div class="zoom-toolbar"><button type="button" class="secondary small-btn" id="zoomOut" aria-label="Zoom out">−</button><span class="micro mono" id="zoomPercent">100%</span><button type="button" class="secondary small-btn" id="zoomIn" aria-label="Zoom in">+</button><button type="button" class="quiet small-btn" id="zoomFit">Fit</button><button class="close-btn" data-close="zoomDialog" type="button" aria-label="Close enlarged diagram"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div></header><div class="zoom-viewport" id="zoomViewport" tabindex="0" aria-label="Enlarged diagram; use the zoom buttons and scroll or drag to pan"><div id="zoomDrawing"></div></div><div class="zoom-footer">Supports remain visible in both views. Zoom in, then drag or scroll to inspect the connections, dimensions and angles.</div></dialog>
+<dialog id="newDialog" class="new-dialog" aria-labelledby="newTitle"><header class="modal-header"><h2 id="newTitle">Start a new session</h2><button class="close-btn" data-close="newDialog" type="button" aria-label="Cancel new session"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header><div id="setupModalHome"></div></dialog>
+<dialog id="teacherDialog" class="info-dialog" aria-labelledby="teacherTitle"><header class="modal-header"><h2 id="teacherTitle">Teacher view · Learning record</h2><button type="button" class="close-btn" data-close="teacherDialog" aria-label="Close teacher view"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header><div class="modal-content"><div class="teacher-start"><label for="teacherStart" class="form-label">Starting point for the next new session</label><select id="teacherStart"><option value="0">Build from a single-load check</option><option value="1">Start with mixed core calculations</option><option value="2">Ready for varied loading arrangements</option></select><p class="micro">Changing this does not alter the current question or reset its record. Progression continues to depend on checked answers.</p></div><div id="teacherRecord"></div></div></dialog>
+<dialog id="reviewDialog" class="zoom-dialog" aria-labelledby="reviewTitle"><header class="modal-header"><h2 id="reviewTitle">Worked review</h2><button type="button" class="close-btn" data-close="reviewDialog" aria-label="Close worked review"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header><div class="modal-content" id="reviewContent"></div></dialog>
+<section id="calculator" class="calc" role="dialog" aria-modal="false" aria-label="Scientific calculator in degree mode" hidden><header class="calc-head" id="calcDrag"><div><strong>Scientific calculator</strong><span class="degree">DEG</span></div><button class="close-btn" id="closeCalc" type="button" aria-label="Close calculator"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header><div class="calc-body"><label class="micro muted" for="calcInput">Expression</label><input id="calcInput" class="calc-input" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="e.g. 24 × sin(46)"><div id="calcOutput" class="calc-output" role="status" aria-live="polite">Angles in degrees</div><div id="calcKeys" class="calc-keys"></div><div class="calc-foot">Keyboard supported · Drag the header to move</div></div></section>
+<div class="toast" id="toast" role="status" hidden></div>
+<noscript><div class="noscript">Enable JavaScript to generate and mark the engineering questions.</div></noscript>
+<script>
+/* Support Reactions & Cable Tensions — source families retained.
+   Original training scenarios; idealised two-dimensional statics only.
+   No network requests, external libraries or answer-service dependencies. */
+'use strict';
+const CORE_ENGINE = (() => {
+  const DEG=Math.PI/180, MARK_TOL=1, STEP_SCALE=100, MARK_TOL_100=100, W=1000, H=720;
+  const int=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+  const pick=a=>a[int(0,a.length-1)];
+  const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=int(0,i);[a[i],a[j]]=[a[j],a[i]]}return a};
+  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+  const cents=n=>Math.sign(n)*Math.round((Math.abs(n)+1e-10)*100);
+  const n2=n=>cents(n)/100;
+  const fmt=n=>Number.isFinite(n)?(Number.isInteger(n2(n))?String(n2(n)):n2(n).toFixed(2)):'—';
+  const exact=n=>String(Number(n.toFixed(8)));
+  const f=n=>Number(n.toFixed(3));
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const point=(p,deg,len)=>({x:p.x+len*Math.cos(deg*DEG),y:p.y-len*Math.sin(deg*DEG)});
+  const lerp=(a,b,t)=>({x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t});
+  const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+  const sub=(a,b)=>`<msub><mi>${a}</mi>${/^\d+$/.test(String(b))?`<mn>${b}</mn>`:String(b).length>1?`<mtext>${b}</mtext>`:`<mi>${b}</mi>`}</msub>`;
+  const textT=i=>`<msub><mi>T</mi><mn>${i}</mn></msub>`;
+  const theta=i=>`<msub><mi>θ</mi><mn>${i}</mn></msub>`;
+  const mn=n=>`<mn>${esc(fmt(n))}</mn>`;
+  const en=n=>`<mn>${exact(n)}</mn>`;
+  const mo=s=>`<mo>${s}</mo>`;
+  const math=(s,block=false)=>`<math xmlns="http://www.w3.org/1998/Math/MathML"${block?' display="block"':''}><mrow>${s}</mrow></math>`;
+  const angle=n=>`${mn(n)}<mo>°</mo>`;
+  const sin=s=>`<mi mathvariant="normal">sin</mi><mo>&#x2061;</mo><mrow><mo>(</mo>${s}<mo>)</mo></mrow>`;
+  const cos=s=>`<mi mathvariant="normal">cos</mi><mo>&#x2061;</mo><mrow><mo>(</mo>${s}<mo>)</mo></mrow>`;
+  const frac=(a,b)=>`<mfrac><mrow>${a}</mrow><mrow>${b}</mrow></mfrac>`;
+  const kN='<mspace width=".25em"/><mtext>kN</mtext>';
+  function parseHundredths(raw){
+    raw=String(raw).trim().replace('−','-');
+    if(!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(raw))return {ok:false,message:'Enter a number, for example 12.34. Do not include the unit.'};
+    const sign=raw.startsWith('-')?-1:1;
+    const [whole,part='']=raw.replace(/^[+-]/,'').split('.');
+    if(part.slice(2).replace(/0/g,'')!=='')return {ok:false,message:'Use at most two decimal places. Answers are checked in 0.01 steps of the displayed unit.'};
+    const value=sign*(Number(whole||'0')*100+Number((part+'00').slice(0,2)));
+    if(!Number.isSafeInteger(value)||Math.abs(value)>1e11)return {ok:false,message:'Enter a finite number within the input range.'};
+    return {ok:true,cents:value,value:value/100};
+  }
+  function withinTolerance(stu,expected){return Number.isFinite(stu)&&Number.isFinite(expected)&&Math.abs(cents(stu)-cents(expected))<=MARK_TOL_100}
+  function mark(raw,expected){const p=parseHundredths(raw);return p.ok?{...p,correct:Math.abs(p.cents-cents(expected))<=100,expected:cents(expected)/100}:p}
+  const families=[
+    {id:'point',original:'qBeam_PointLoad',label:'Beam · one point load'},
+    {id:'udl',original:'qBeam_UDL_Point',label:'Beam · full-span UDL and point load'},
+    {id:'two',original:'qBeam_TwoPointLoads',label:'Beam · two point loads'},
+    {id:'cable',original:'qCable_TwoTensions',label:'Joint · two cable tensions'},
+    {id:'platform',original:'qPlatform_4LegSym',label:'Platform · four legs and symmetry'}
+  ];
+  // Each brief describes the same idealised load case as its source family.
+  const scenarios={
+    point:[
+      {title:'Gantry inspection carriage',context:'An inspection carriage is parked on a simply supported gantry beam during a static load check.',object:'carriage'},
+      {title:'Electric-drive transfer rail',context:'An electric-drive module rests on a transfer beam between two foundation-mounted bearings.',object:'motor'},
+      {title:'Robotic assembly station',context:'A robot subassembly is held stationary on a support beam while its bearing reactions are checked.',object:'module'},
+      {title:'Bridge maintenance trolley',context:'A maintenance trolley is stationary on a simply supported service beam.',object:'crate'},
+      {title:'Pump installation crosshead',context:'A pump installation load is transferred to a crosshead beam carried by two bearings.',object:'motor'},
+      {title:'Precast component test bed',context:'A test fixture transfers the weight of a precast component to one point on a simply supported beam.',object:'crate'}
+    ],
+    udl:[
+      {title:'Roof-services support beam',context:'A services beam carries an evenly distributed service load and the concentrated load of an additional equipment unit.',object:'module'},
+      {title:'Conveyor drive support',context:'A conveyor support beam carries a uniform line load and a separate drive-unit load.',object:'motor'},
+      {title:'Walkway equipment installation',context:'A walkway beam supports a uniform design load and a stationary equipment module.',object:'crate'},
+      {title:'Battery-line service gantry',context:'A service gantry carries a uniform cable-tray load and the point load from a test module.',object:'module'},
+      {title:'Ventilation plant support',context:'A plant-room beam carries uniformly distributed services and a separate ventilation-unit load.',object:'duct'},
+      {title:'Water-treatment service beam',context:'A service beam carries a uniform pipework line load and a concentrated maintenance-unit load.',object:'motor'}
+    ],
+    two:[
+      {title:'Twin-drive test rail',context:'Two drive modules apply separate downward loads to a simply supported test rail.',object:'motor'},
+      {title:'Paired maintenance carriages',context:'Two maintenance carriages are stationary at different positions on a service beam.',object:'carriage'},
+      {title:'Off-centre tooling stations',context:'Two tooling stations transfer their loads to distinct points on a support beam.',object:'module'},
+      {title:'Modular plant installation',context:'Two prefabricated plant modules rest at different positions on a temporary support beam.',object:'crate'},
+      {title:'Bridge inspection equipment',context:'Two pieces of inspection equipment transfer concentrated loads to a simply supported beam.',object:'crate'},
+      {title:'Automation-line crossbeam',context:'Two automation modules are installed on a crossbeam between a pin bearing and a roller bearing.',object:'module'}
+    ],
+    cable:[
+      {title:'Electric-drive suspension',context:'An electric-drive unit is held stationary beneath two structural anchors during an installation check.',object:'motor'},
+      {title:'Ventilation module lift',context:'A ventilation module is held in static equilibrium by two cables meeting at a common lifting joint.',object:'duct'},
+      {title:'Precision tooling suspension',context:'A tooling module is suspended from two overhead cables while a technician checks the load path.',object:'module'},
+      {title:'Battery enclosure handling',context:'A battery enclosure is held stationary using a two-cable suspension assembly.',object:'crate'},
+      {title:'Inspection pod suspension',context:'An inspection pod is supported by two cables fixed to an overhead structural slab.',object:'module'},
+      {title:'Pump-skid suspension trial',context:'A pump module is held in a stationary suspension trial below two overhead mounting points.',object:'motor'}
+    ],
+    platform:[
+      {title:'Robot-cell equipment platform',context:'A rigid equipment platform carries a robot-cell module on its longitudinal centreline.',object:'module'},
+      {title:'Pump-skid support platform',context:'A pump module is positioned on the centreline of a rigid four-leg support platform.',object:'motor'},
+      {title:'Battery test-bench supports',context:'A battery test module rests on the centreline of a four-leg test bench.',object:'crate'},
+      {title:'Metrology equipment stand',context:'A metrology module is installed on the centreline of a rigid four-leg stand.',object:'module'},
+      {title:'Ventilation-unit service stand',context:'A ventilation unit is placed on the centreline of a rigid service stand with four identical legs.',object:'duct'},
+      {title:'Tooling inspection platform',context:'A tooling assembly rests on the centreline of a rigid platform during a static support-load check.',object:'crate'}
+    ]
+  };
+  function newHistory(){return {seen:new Set(),familyBag:[],scenarioBags:{},lastScenario:{},askBags:{},variantBags:{},lastFamily:null}}
+  function nextFamily(h){if(!h.familyBag.length){h.familyBag=shuffle(families.map(f=>f.id));if(h.familyBag[0]===h.lastFamily)[h.familyBag[0],h.familyBag[1]]=[h.familyBag[1],h.familyBag[0]]}return h.lastFamily=h.familyBag.shift()}
+  function fromBag(h,store,key,values){if(!h[store][key]?.length)h[store][key]=shuffle(values);return h[store][key].shift()}
+  function nextScenario(id,h){if(!h.scenarioBags[id]?.length){h.scenarioBags[id]=shuffle(scenarios[id].map((_,i)=>i));if(h.scenarioBags[id][0]===h.lastScenario[id])[h.scenarioBags[id][0],h.scenarioBags[id][1]]=[h.scenarioBags[id][1],h.scenarioBags[id][0]]}return h.lastScenario[id]=h.scenarioBags[id].shift()}
+  const measureCanvas=document.createElement('canvas'),measureContext=measureCanvas.getContext('2d');
+  function labelWidth(text,size=17){measureContext.font=`650 ${size}px system-ui`;return Math.ceil(measureContext.measureText(text.replace(/_[A-Za-z0-9]+/g,s=>s.slice(1))).width)+24}
+  function fingerprint(q){return JSON.stringify([q.family,q.L,q.loads,q.w,q.P,q.th1,q.th2,q.x,q.ask,q.variant])}
+  function validateQuestion(q){
+    if(!q||!Number.isFinite(q.answer)||q.answer<=0)return false;
+    if(q.family==='cable'){
+      return q.th1>=35&&q.th1<=70&&q.th2>=35&&q.th2<=70&&q.T1>0&&q.T2>0&&Math.abs(q.T1*Math.cos(q.th1*DEG)-q.T2*Math.cos(q.th2*DEG))<1e-8&&Math.abs(q.T1*Math.sin(q.th1*DEG)+q.T2*Math.sin(q.th2*DEG)-q.P)<1e-8;
+    }
+    if(q.family==='platform')return q.x>0&&q.x<q.L&&q.RL>0&&q.RR>0&&Math.abs(2*q.RL+2*q.RR-q.P)<1e-8&&Math.abs(2*q.RR*q.L-q.P*q.x)<1e-8;
+    const total=q.loads.reduce((s,l)=>s+l.P,0)+q.w*q.L;
+    const moment=q.loads.reduce((s,l)=>s+l.P*l.a,0)+q.w*q.L*q.L/2;
+    return q.L>0&&q.loads.every(l=>l.P>0&&l.a>0&&l.a<q.L)&&q.RA>0&&q.RB>0&&Math.abs(q.RA+q.RB-total)<1e-8&&Math.abs(q.RB*q.L-moment)<1e-8;
+  }
+  function createQuestion(id,history,forced={}){
+    const family=families.find(f=>f.id===id);if(!family)throw Error('Unknown question family.');
+    const scenarioIndex=forced.scenarioIndex??nextScenario(id,history),s=scenarios[id][scenarioIndex];
+    const ask=forced.ask??fromBag(history,'askBags',id,id==='cable'?['T1','T2']:id==='platform'?['A','B','C','D']:['A','B']);
+    const variant=forced.variant??fromBag(history,'variantBags',id,id==='two'?[0,1,2]:id==='cable'?[0]:[0,1]);
+    for(let tries=0;tries<1000;tries++){
+      const q={family:id,original:family.original,title:s.title,context:s.context,object:s.object,scenarioIndex,ask,variant,w:0,loads:[]};
+      if(id==='cable'){
+        q.P=forced.P??int(500,4500)/100;q.th1=forced.th1??int(35,70);q.th2=forced.th2??int(35,70);
+        if(!forced.th1&&!forced.th2&&Math.abs(q.th1-q.th2)<5)continue;
+        q.T1=q.P*Math.cos(q.th2*DEG)/Math.sin((q.th1+q.th2)*DEG);q.T2=q.P*Math.cos(q.th1*DEG)/Math.sin((q.th1+q.th2)*DEG);
+        q.answer=ask==='T1'?q.T1:q.T2;q.answerName=ask==='T1'?'Cable 1 tension':'Cable 2 tension';q.symbol=ask==='T1'?textT(1):textT(2);
+        q.statement=`The total suspended weight is ${fmt(q.P)} kN. Cable 1 makes an angle of ${q.th1}° to the left-hand horizontal; cable 2 makes an angle of ${q.th2}° to the right-hand horizontal. Both cables meet at J.`;
+        q.fixing='<strong>Both cables are physically attached to bolted clevis anchors in the overhead structural slab.</strong><br>The slab is carried by the two columns shown, which meet the floor foundations.';
+        q.assumptions='The anchor locations are fixed, but the cable-end pins can rotate. The load includes the lifting attachment. Cable self-weight is neglected.';
+        q.legend=['Cable 1 · left','Cable 2 · right'];q.note='Angles are measured from the dashed horizontal reference, not from the vertical.';
+        q.data=[['Suspended load','W',q.P,'kN'],['Cable 1 angle','θ_1',q.th1,'°'],['Cable 2 angle','θ_2',q.th2,'°']];
+      }else if(id==='platform'){
+        q.L=forced.L??int(160,360)/100;q.P=forced.P??int(600,4000)/100;
+        q.x=forced.x??n2(q.L*int(18,82)/100);if(!forced.x&&Math.abs(q.x/q.L-.5)<.06)continue;
+        q.RR=q.P*q.x/(2*q.L);q.RL=q.P/2-q.RR;q.answer=['A','D'].includes(ask)?q.RL:q.RR;
+        q.answerName=`Leg ${ask} force`;q.symbol=sub('R',ask);
+        q.statement=`The ${fmt(q.P)} kN load acts on the longitudinal centreline. The left-to-right leg spacing is ${fmt(q.L)} m. The load is ${fmt(variant?q.L-q.x:q.x)} m from the ${variant?'right-hand pair B and C':'left-hand pair A and D'}. Find the force carried by one leg, not by a pair.`;
+        q.fixing='<strong>All four legs are connected to the platform and seated on bolted base plates on the structural floor.</strong><br>A and D form the left-hand pair; B and C form the right-hand pair.';
+        q.assumptions='Assume a rigid level platform, four identical symmetrically placed legs and contact at every foot. Only vertical support forces are considered. The platform’s own weight is neglected.';
+        q.legend=['Left pair · A and D','Right pair · B and C'];q.note='The centreline load and symmetric supports give R_A = R_D and R_B = R_C.';
+        q.data=[['Load','W',q.P,'kN'],['Leg spacing','L',q.L,'m'],[variant?'From right pair':'From left pair',variant?'b':'x',variant?q.L-q.x:q.x,'m']];
+      }else{
+        q.L=forced.L??int(id==='point'?400:id==='udl'?500:600,id==='point'?1200:id==='udl'?1400:1600)/100;
+        if(id==='two'){
+          q.loads=forced.loads??[{P:int(800,6000)/100,a:n2(q.L*int(20,34)/100)},{P:int(800,6000)/100,a:n2(q.L*int(64,80)/100)}];
+          if(!forced.loads&&Math.abs(q.loads[0].P-q.loads[1].P)<4)continue;
+        }else q.loads=forced.loads??[{P:int(id==='point'?1000:800,id==='point'?8500:5500)/100,a:n2(q.L*int(21,79)/100)}];
+        q.w=id==='udl'?(forced.w??int(250,1400)/100):0;
+        const total=q.loads.reduce((a,l)=>a+l.P,0)+q.w*q.L;
+        q.RB=(q.loads.reduce((a,l)=>a+l.P*l.a,0)+q.w*q.L*q.L/2)/q.L;q.RA=total-q.RB;
+        q.answer=ask==='A'?q.RA:q.RB;q.answerName=`Support ${ask} reaction`;q.symbol=sub('R',ask);
+        q.fixing='<strong>A is a pin bearing secured to a concrete foundation. B is a roller bearing seated on its foundation.</strong><br>The beam is in contact with both bearings; neither end is a built-in or cantilever support.';
+        q.assumptions='A restrains horizontal and vertical movement but permits rotation. B permits horizontal movement and rotation and carries a vertical reaction. There is no horizontal applied load, so the horizontal reaction at A is zero.';
+        q.legend=['Support A · pin','Support B · roller'];q.note=q.w?'The stated full-span UDL includes all distributed loading used in this model. Do not add a separate beam weight.':'Beam self-weight is neglected. All shown point loads act vertically downwards.';
+        q.data=[['Support span','L',q.L,'m']];
+        if(q.w)q.data.push(['Full-span UDL','w',q.w,'kN/m']);
+        q.loads.forEach((l,i)=>q.data.push([q.loads.length===1?'Point load':`Point load ${i+1}`,q.loads.length===1?'P':`P_${i+1}`,l.P,'kN']));
+        const distanceText=[];
+        if(variant===2){
+          const d=[q.loads[0].a,q.loads[1].a-q.loads[0].a,q.L-q.loads[1].a];
+          q.data.push(['Between loads','d',d[1],'m']);
+          distanceText.push(`The three consecutive distances from A to B are ${fmt(d[0])} m, ${fmt(d[1])} m and ${fmt(d[2])} m, as dimensioned.`);
+        }else q.loads.forEach((l,i)=>{
+          const sym=(variant?'b':'a')+(q.loads.length===2?`_${i+1}`:'');
+          q.data.push([`From ${variant?'B':'A'}${q.loads.length===2?` to P${i+1}`:''}`,sym,variant?q.L-l.a:l.a,'m']);
+          distanceText.push(`${q.loads.length===2?`Load P${i+1}`:'The point load'} acts ${fmt(variant?q.L-l.a:l.a)} m from ${variant?'B':'A'}.`);
+        });
+        q.statement=`The beam span between supports A and B is ${fmt(q.L)} m. ${q.w?`A ${fmt(q.w)} kN/m uniformly distributed load acts over the full span. `:''}${q.loads.length===2?`P1 = ${fmt(q.loads[0].P)} kN and P2 = ${fmt(q.loads[1].P)} kN. `:`P = ${fmt(q.loads[0].P)} kN. `}${distanceText.join(' ')}`;
+      }
+      q.key=fingerprint(q);
+      if(history.seen.has(q.key)||!validateQuestion(q))continue;
+      history.seen.add(q.key);return q;
+    }
+    throw Error('A fresh valid engineering question could not be generated. Start a new session.');
+  }
+  function buildSet(n,h){return Array.from({length:n},()=>createQuestion(nextFamily(h),h))}
+  function valueSymbol(s){return s.includes('_')?sub(...s.split('_')):`<mi>${s}</mi>`}
+  function dataHTML(q){return q.data.map(([label,sym,val,u])=>`<div class="datum-cell"><span class="small-label">${esc(label)}</span><span class="value" style="color:${['P','P_1','P_2','W','w'].includes(sym)?'var(--force)':sym==='θ_1'?'var(--m1)':sym==='θ_2'?'var(--m2)':'var(--ink)'}">${math(`${valueSymbol(sym)}<mo>=</mo>${mn(val)}<mspace width=".2em"/><mtext>${u==='kN/m'?'kN/m':u}</mtext>`)}</span></div>`).join('')}
+  function equilibriumMath(q){
+    if(q.family==='cable')return {intro:'Resolve horizontally and vertically at joint J. The angles are measured from the horizontal.',perp:`${textT(1)}${cos(theta(1))}<mo>=</mo>${textT(2)}${cos(theta(2))}`,parallel:`${textT(1)}${sin(theta(1))}<mo>+</mo>${textT(2)}${sin(theta(2))}<mo>=</mo><mi>W</mi>`,end:'Use degree mode. Keep full precision until the final answer.'};
+    if(q.family==='platform')return {intro:'Symmetry gives equal forces in each front–rear pair. Let R_L be the force in each left leg and R_R in each right leg.',perp:`<mn>2</mn>${sub('R','L')}<mo>+</mo><mn>2</mn>${sub('R','R')}<mo>=</mo><mi>W</mi>`,parallel:`<mn>2</mn>${sub('R','R')}<mi>L</mi><mo>=</mo><mi>W</mi><mi>x</mi>`,end:'Here x is measured from the left-hand legs. Each R is one leg’s force. Take moments about the left pair.'};
+    const loads=q.loads.map((l,i)=>q.loads.length===1?'<mi>P</mi>':sub('P',i+1));
+    return {intro:'Use vertical force balance and moments about A. All distances a are measured from A. A full-span UDL is equivalent to wL at the midpoint.',perp:`${sub('R','A')}<mo>+</mo>${sub('R','B')}<mo>=</mo>${loads.join('<mo>+</mo>')}${q.w?'<mo>+</mo><mi>w</mi><mi>L</mi>':''}`,parallel:`${sub('R','B')}<mi>L</mi><mo>=</mo>${loads.map((p,i)=>p+(loads.length===1?'<mi>a</mi>':sub('a',i+1))).join('<mo>+</mo>')}${q.w?`<mo>+</mo><mo>(</mo><mi>w</mi><mi>L</mi><mo>)</mo>${frac('<mi>L</mi>','<mn>2</mn>')}`:''}`,end:'Moment = force × perpendicular distance. Rearrange the equations yourself. Do not round intermediate values.'};
+  }
+  function step(n,title,content){return `<div class="step"><div class="step-heading"><span class="step-number">${n}</span>${title}</div>${content}</div>`}
+  function result(q){return `<div class="result-box">${math(`${q.symbol}<mo>=</mo>${mn(q.answer)}${kN}`)}</div>`}
+  function workingHTML(q){
+    const eq=equilibriumMath(q);
+    if(q.family==='cable'){
+      const i=q.ask==='T1'?1:2,j=i===1?2:1;
+      return step(1,'Resolve at J',`<p>Both angles are measured from the horizontal. The horizontal components cancel; the vertical components support W.</p>${math(eq.perp,true)}${math(eq.parallel,true)}`)+step(2,'Eliminate the other tension',math(`${textT(i)}<mo>=</mo>${frac(`<mi>W</mi>${cos(theta(j))}`,sin(`${theta(1)}<mo>+</mo>${theta(2)}`))}`,true))+step(3,'Substitute without early rounding',`${math(`${textT(i)}<mo>=</mo>${frac(`${mn(q.P)}<mo>×</mo>${cos(angle(j===1?q.th1:q.th2))}`,sin(`${angle(q.th1)}<mo>+</mo>${angle(q.th2)}`))}`,true)}${result(q)}<p style="margin-top:10px">The other cable tension is ${fmt(i===1?q.T2:q.T1)} kN. Both forces pull away from J, towards their anchors.</p>`);
+    }
+    if(q.family==='platform'){
+      const left=['A','D'].includes(q.ask);
+      const d=left?q.L-q.x:q.x;
+      const distanceWorking=q.variant?math(`<mi>x</mi><mo>=</mo>${mn(q.L)}<mo>−</mo>${mn(q.L-q.x)}<mo>=</mo>${mn(q.x)}<mtext> m</mtext>`,true):`<p>The given distance x = ${fmt(q.x)} m is measured from the left pair.</p>`;
+      return step(1,'Use the front–rear symmetry',`${math(`${sub('R','A')}<mo>=</mo>${sub('R','D')}<mo>=</mo>${sub('R','L')}`,true)}${math(`${sub('R','B')}<mo>=</mo>${sub('R','C')}<mo>=</mo>${sub('R','R')}`,true)}<p>Two legs share the reaction at each end. The load is on the longitudinal centreline.</p>${distanceWorking}`)+step(2,`Take moments about the ${left?'right':'left'} pair`,`${math(`<mn>2</mn>${sub('R',left?'L':'R')}<mi>L</mi><mo>=</mo><mi>W</mi>${left?'<mo>(</mo><mi>L</mi><mo>−</mo><mi>x</mi><mo>)</mo>':'<mi>x</mi>'}`,true)}${math(`${sub('R',left?'L':'R')}<mo>=</mo>${frac(`${mn(q.P)}<mo>×</mo>${mn(d)}`,`<mn>2</mn><mo>×</mo>${mn(q.L)}`)}`,true)}`)+step(3,`Report the force in leg ${q.ask}`,`${result(q)}<p style="margin-top:10px">Each left leg carries ${fmt(q.RL)} kN. Each right leg carries ${fmt(q.RR)} kN.</p><p>Do not report the combined force in a pair when the question asks for a single leg.</p>`);
+    }
+    const about=q.ask==='A'?'B':'A';
+    const distances=q.loads.map(l=>q.ask==='A'?q.L-l.a:l.a);
+    let prep=q.variant===1?q.loads.map((l,i)=>math(`${q.loads.length===1?'<mi>a</mi>':sub('a',i+1)}<mo>=</mo>${mn(q.L)}<mo>−</mo>${mn(q.L-l.a)}<mo>=</mo>${mn(l.a)}<mtext> m</mtext>`,true)).join(''):q.variant===2?`${math(`${sub('a',1)}<mo>=</mo>${mn(q.loads[0].a)}<mtext> m</mtext>`,true)}${math(`${sub('a',2)}<mo>=</mo>${mn(q.loads[0].a)}<mo>+</mo>${mn(q.loads[1].a-q.loads[0].a)}<mo>=</mo>${mn(q.loads[1].a)}<mtext> m</mtext>`,true)}`:'<p>The load positions are already given from support A.</p>';
+    if(q.w)prep+=`${math(`${sub('W','UDL')}<mo>=</mo><mi>w</mi><mi>L</mi><mo>=</mo>${mn(q.w)}<mo>×</mo>${mn(q.L)}<mo>=</mo>${en(q.w*q.L)}${kN}`,true)}<p>This equivalent force acts halfway between A and B.</p>`;
+    const products=q.loads.map((l,i)=>`${mn(l.P)}<mo>×</mo>${mn(distances[i])}`);
+    if(q.w)products.push(`<mo>(</mo>${mn(q.w)}<mo>×</mo>${mn(q.L)}<mo>)</mo><mo>×</mo>${frac(mn(q.L),'<mn>2</mn>')}`);
+    return step(1,'Read the distances and loading',prep)+step(2,`Take moments about support ${about}`,`<p>The reaction at ${about} has zero moment about ${about}. Use perpendicular distances to each vertical load.</p>${math(`${q.symbol}<mo>×</mo>${mn(q.L)}<mo>=</mo>${products.join('<mo>+</mo>')}`,true)}${math(`${q.symbol}<mo>=</mo>${frac(products.join('<mo>+</mo>'),mn(q.L))}`,true)}`)+step(3,'Round the requested reaction',`${result(q)}<p style="margin-top:10px">${math(`${sub('R','A')}<mo>=</mo>${mn(q.RA)}${kN}`)} and ${math(`${sub('R','B')}<mo>=</mo>${mn(q.RB)}${kN}`)}, both upwards.</p><p>Before rounding, the two reactions sum to the total downward load.</p>${math(eq.perp,true)}`);
+  }
+  // SVG drafting primitives. Dimension lanes are separate from the structure;
+  // annotation backgrounds break lines instead of printing text over them.
+  function line(a,b,attrs=''){return `<line x1="${f(a.x)}" y1="${f(a.y)}" x2="${f(b.x)}" y2="${f(b.y)}" ${attrs}/>`}
+  function L(x1,y1,x2,y2,attrs=''){return line({x:x1,y:y1},{x:x2,y:y2},attrs)}
+  function rect(x,y,w,h,attrs=''){return `<rect x="${f(x)}" y="${f(y)}" width="${f(w)}" height="${f(h)}" ${attrs}/>`}
+  function svgText(s){return esc(s).replace(/_([A-Za-z0-9]+)/g,'<tspan baseline-shift="sub" font-size="11">$1</tspan>')}
+  function label(id,x,y,text,col='var(--ink)',size=17){
+    const w=labelWidth(text,size),h=34;
+    return `<g class="annotation" data-label="${esc(id)}">${rect(x-w/2,y-h/2,w,h,'rx="8" class="label-box"')}<text x="${f(x)}" y="${f(y)}" text-anchor="middle" class="label-text" style="font-size:${size}px" fill="${col}">${svgText(text)}</text></g>`;
+  }
+  function leader(a,b,col='var(--muted)'){return line(a,b,`stroke="${col}" stroke-width="1.2" opacity=".85"`)}
+  function bolt(x,y){return `<circle cx="${f(x)}" cy="${f(y)}" r="4.2" fill="var(--metal)" stroke="var(--ink)" stroke-width="1.2"/>${L(x-2,y,x+2,y,'stroke="var(--steel)" stroke-width="1.2"')}`}
+  function arrow(x1,y1,x2,y2,col,prefix,type='force',width=3){return L(x1,y1,x2,y2,`stroke="${col}" stroke-width="${width}" stroke-linecap="round" marker-end="url(#${prefix}-${type}-arrow)"`)}
+  function dim(id,x1,x2,y,text,origin1=482,origin2=482){
+    const lo=Math.min(x1,x2),hi=Math.max(x1,x2),crowded=hi-lo<labelWidth(text,16)+30,ly=crowded?y+31:y;
+    return `<g class="dimension" data-dimension="${id}" data-x1="${f(lo)}" data-x2="${f(hi)}">${L(lo,origin1,lo,y+12,'stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="3 4" opacity=".6"')}${L(hi,origin2,hi,y+12,'stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="3 4" opacity=".6"')}${L(lo,y,hi,y,'stroke="var(--muted)" stroke-width="1.3"')}<path d="M${f(lo)} ${y}l9 -3.7v7.4Z M${f(hi)} ${y}l-9 -3.7v7.4Z" fill="var(--muted)"/>${crowded?L((lo+hi)/2,y,(lo+hi)/2,ly-17,'stroke="var(--muted)" stroke-width="1.1"'):''}${label('dim-'+id,(lo+hi)/2,ly,text,'var(--ink)',16)}</g>`;
+  }
+  function beamShape(x1,x2,top){return `<g class="girder">${rect(x1,top+7,x2-x1,18,'fill="var(--steel)" stroke="var(--metal)" stroke-width="1.2"')}${rect(x1-7,top,x2-x1+14,8,'rx="2" fill="var(--metal)" stroke="var(--ink)" stroke-width="1.2"')}${rect(x1-7,top+25,x2-x1+14,8,'rx="2" fill="var(--metal)" stroke="var(--ink)" stroke-width="1.2"')}${L(x1,top+9,x2,top+9,'stroke="var(--ink)" stroke-width="1" opacity=".45"')}${[.2,.4,.6,.8].map(t=>L(x1+(x2-x1)*t,top+10,x1+(x2-x1)*t,top+23,'stroke="var(--metal)" stroke-width="1.8"')).join('')}</g>`}
+  function machine(x,bottom,kind='module',scale=1){
+    let body='';
+    if(kind==='motor')body=`<rect x="-29" y="-47" width="58" height="35" rx="8" fill="var(--steel)" stroke="var(--ink)" stroke-width="1.5"/>${[-20,-12,-4,4,12,20].map(a=>`<path d="M${a} -43v27" stroke="var(--metal)" stroke-width="2"/>`).join('')}<rect x="-9" y="-53" width="20" height="9" rx="2" fill="var(--metal)" stroke="var(--ink)"/><path d="M29 -31h10v8H29" fill="var(--metal)" stroke="var(--ink)"/>`;
+    else if(kind==='duct')body=`<rect x="-38" y="-46" width="76" height="35" rx="3" fill="var(--steel)" stroke="var(--ink)" stroke-width="1.5"/><circle cx="0" cy="-29" r="13" fill="var(--surface)" stroke="var(--metal)"/><path d="M-9 -37 9 -21M9 -37-9 -21M-12 -29h24" stroke="var(--metal)" stroke-width="2"/>`;
+    else if(kind==='crate')body=`<rect x="-34" y="-49" width="68" height="38" rx="3" fill="var(--steel)" stroke="var(--ink)" stroke-width="1.5"/><path d="M-28 -43 28 -17M28 -43-28 -17" stroke="var(--metal)" stroke-width="2"/><path d="M-17 -48v36M17 -48v36" stroke="var(--metal)" stroke-width="3"/>`;
+    else body=`<rect x="-31" y="-46" width="62" height="35" rx="5" fill="var(--steel)" stroke="var(--ink)" stroke-width="1.5"/><rect x="-21" y="-36" width="23" height="15" rx="2" fill="var(--surface)" stroke="var(--metal)"/><path d="M10 -34h13m-13 7h13m-13 7h13" stroke="var(--metal)" stroke-width="2"/>`;
+    return `<g class="equipment" transform="translate(${f(x)} ${f(bottom)}) scale(${scale})" aria-hidden="true">${body}<rect x="-25" y="-12" width="10" height="6" fill="var(--metal)"/><rect x="15" y="-12" width="10" height="6" fill="var(--metal)"/><rect x="-42" y="-6" width="84" height="6" rx="1" fill="var(--metal)" stroke="var(--ink)" stroke-width="1"/></g>`;
+  }
+  function support(x,kind,prefix){
+    const roller=kind==='roller',n=roller?2:1;
+    return `<g class="member-group member-${n}" data-member="${n}" role="button" tabindex="0" aria-label="Highlight ${roller?'roller support B':'pin support A'}"><g class="member-part">${rect(x-65,412,130,50,`fill="var(--concrete)" stroke="var(--hatch)" stroke-width="1.5"`)}${rect(x-65,412,130,50,`fill="url(#${prefix}-hatch)" opacity=".65"`)}${rect(x-35,347,70,7,'rx="2" fill="var(--metal)" stroke="var(--ink)" stroke-width="1.2"')}<path d="M${x} 354L${x-34} 392H${x+34}Z" fill="var(--steel)" stroke="var(--m${n})" stroke-width="2"/><circle cx="${x}" cy="359" r="6.5" fill="var(--surface)" stroke="var(--metal)" stroke-width="2"/>${rect(x-43,392,86,6,'fill="var(--metal)" stroke="var(--ink)" stroke-width="1"')}${roller?`<circle cx="${x-22}" cy="405" r="7" fill="var(--steel)" stroke="var(--m2)" stroke-width="1.5"/><circle cx="${x}" cy="405" r="7" fill="var(--steel)" stroke="var(--m2)" stroke-width="1.5"/><circle cx="${x+22}" cy="405" r="7" fill="var(--steel)" stroke="var(--m2)" stroke-width="1.5"/>`:rect(x-43,398,86,14,'fill="var(--steel)" stroke="var(--ink)" stroke-width="1"')}${!roller?bolt(x-31,404)+bolt(x+31,404):''}</g></g>`;
+  }
+  function beamGeometry(q){const A=156,B=844,span=B-A;return {A,B,span,points:q.loads.map(l=>A+span*l.a/q.L)}}
+  function drawBeam(q,prefix,overlay){
+    const g=beamGeometry(q),{A,B,points}=g;
+    let out='';
+    // Projection lines are drawn behind the actual metalwork and foundations.
+    [A,B,...points].forEach(x=>out+=L(x,349,x,652,'stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 5" opacity=".28"'));
+    out+=rect(70,463,860,14,`fill="url(#${prefix}-hatch)" opacity=".75"`)+L(70,462,930,462,'stroke="var(--hatch)" stroke-width="2"');
+    out+=support(A,'pin',prefix)+support(B,'roller',prefix);
+    out+=beamShape(A-7,B+7,314);
+    if(q.w){
+      out+=rect(A,205,B-A,107,'fill="var(--force)" opacity=".065"');
+      out+=L(A,205,B,205,'stroke="var(--force)" stroke-width="1.7" opacity=".8"');
+      for(let i=0;i<=16;i++){const x=A+(B-A)*i/16;if(points.every(p=>Math.abs(p-x)>50))out+=arrow(x,205,x,309,'var(--force)',prefix,'force',1.9)}
+      out+=label('udl',500,72,`w = ${fmt(q.w)} kN/m · full span`,'var(--force)');
+    }
+    q.loads.forEach((load,i)=>{
+      const x=points[i],y=q.w?130:113;
+      out+=machine(x,314,q.object);
+      out+=arrow(x,y+24,x,258,'var(--force)',prefix,'force',3.4);
+      out+=label(`load-${i}`,x,y,`${q.loads.length===2?'P_'+(i+1):'P'} = ${fmt(load.P)} kN`,'var(--force)');
+    });
+    if(overlay){
+      for(const [x,letter,n] of [[A,'A',1],[B,'B',2]])out+=arrow(x,325,x,224,`var(--m${n})`,prefix,`m${n}`,3.5)+label('reaction-'+letter,x,197,`R_${letter} ↑`,`var(--m${n})`);
+    }
+    out+=label('support-A',A,494,'A · pin bearing','var(--m1)',16)+label('support-B',B,494,'B · roller bearing','var(--m2)',16);
+    if(q.family==='two'){
+      if(q.variant===2){const xx=[A,...points,B],dd=[q.loads[0].a,q.loads[1].a-q.loads[0].a,q.L-q.loads[1].a];for(let i=0;i<3;i++)out+=dim('segment-'+i,xx[i],xx[i+1],556,`${fmt(dd[i])} m`,518,518)}
+      else q.loads.forEach((l,i)=>out+=dim('position-'+i,q.variant?points[i]:A,q.variant?B:points[i],550+i*50,`${q.variant?'b':'a'}_${i+1} = ${fmt(q.variant?q.L-l.a:l.a)} m`,518,518));
+    }else out+=dim('position',q.variant?points[0]:A,q.variant?B:points[0],558,`${q.variant?'b':'a'} = ${fmt(q.variant?q.L-q.loads[0].a:q.loads[0].a)} m`,518,518);
+    out+=dim('span',A,B,658,`L = ${fmt(q.L)} m`,518,518);
+    out+=`<text x="24" y="704" class="svg-caption">Support centres define the span · All dimensions in metres</text><text x="976" y="704" class="svg-caption" text-anchor="end">${overlay?'Arrows show upward reactions on the beam':'Pin and roller remain in contact with the beam'}</text>`;
+    return out;
+  }
+  function cableGeometry(q){
+    const ct1=1/Math.tan(q.th1*DEG),ct2=1/Math.tan(q.th2*DEG),dy=Math.min(223,590/(ct1+ct2));
+    const dx1=dy*ct1,dx2=dy*ct2,jx=500+(dx1-dx2)/2;
+    const J={x:jx,y:176+dy},A1={x:jx-dx1,y:176},A2={x:jx+dx2,y:176};
+    return {J,A1,A2};
+  }
+  function clevis(A,letter,col){
+    return `<g class="anchor">${rect(A.x-23,136,46,9,'rx="2" fill="var(--steel)" stroke="var(--metal)" stroke-width="1.3"')}${bolt(A.x-15,140)}${bolt(A.x+15,140)}<path d="M${f(A.x-11)} 145V173Q${f(A.x-11)} 187 ${f(A.x)} 187Q${f(A.x+11)} 187 ${f(A.x+11)} 173V145" fill="var(--steel)" stroke="var(--metal)" stroke-width="1.8"/><circle cx="${f(A.x)}" cy="${A.y}" r="7.5" fill="var(--surface)" stroke="${col}" stroke-width="2"/><text x="${f(A.x)}" y="124" class="anchor-text" fill="var(--ink)">${letter}</text></g>`;
+  }
+  function arc(J,r,a,b){const s=point(J,a,r),e=point(J,b,r);return `M${f(s.x)} ${f(s.y)}A${r} ${r} 0 0 ${b>a?0:1} ${f(e.x)} ${f(e.y)}`}
+  function drawCable(q,prefix,overlay){
+    const {J,A1,A2}=cableGeometry(q);let out='';
+    // Continuous support frame: slab -> columns -> base plates -> foundations.
+    out+=rect(67,143,39,430,'fill="var(--steel)" stroke="var(--metal)" stroke-width="1.5"')+rect(894,143,39,430,'fill="var(--steel)" stroke="var(--metal)" stroke-width="1.5"');
+    for(const x of [86.5,913.5])out+=rect(x-35,573,70,10,'rx="2" fill="var(--metal)" stroke="var(--ink)"')+bolt(x-26,578)+bolt(x+26,578)+rect(x-43,583,86,27,`fill="var(--concrete)" stroke="var(--hatch)"`)+rect(x-43,583,86,27,`fill="url(#${prefix}-hatch)"`);
+    out+=rect(58,99,884,44,'fill="var(--concrete)" stroke="var(--hatch)" stroke-width="2"')+rect(58,99,884,44,`fill="url(#${prefix}-hatch)" opacity=".75"`);
+    out+=L(42,611,958,611,'stroke="var(--hatch)" stroke-width="2"')+rect(42,611,916,13,`fill="url(#${prefix}-hatch)"`);
+    out+=label('overhead-structure',500,65,'Structural slab · fixed anchor locations','var(--fixed)',16);
+    out+=L(J.x-219,J.y,J.x+219,J.y,'stroke="var(--datum)" stroke-width="2" stroke-dasharray="8 7"');
+    for(const [i,A,deg] of [[1,A1,180-q.th1],[2,A2,q.th2]]){
+      out+=`<g class="member-group member-${i}" data-member="${i}" role="button" tabindex="0" aria-label="Highlight cable ${i}"><g class="member-part">${line(J,A,`stroke="var(--ink)" stroke-width="8" stroke-linecap="round"`)}${line(J,A,`stroke="var(--m${i})" stroke-width="4.5" stroke-linecap="round"`)}${line(J,A,'stroke="var(--surface)" stroke-width="1" stroke-dasharray="2 9" opacity=".6"')}</g></g>`;
+      if(overlay){const a=point(J,deg,32),b=point(J,deg,152);out+=line(a,b,'stroke="var(--surface)" stroke-width="8"')+arrow(a.x,a.y,b.x,b.y,`var(--m${i})`,prefix,`m${i}`,3.7)}
+      const mid=lerp(J,A,.54),cx=mid.x+(i===1?-77:77),cy=mid.y-8;
+      out+=leader(mid,{x:cx,y:cy},`var(--m${i})`)+label('cable-'+i,cx,cy,`${overlay?'T_'+i:'Cable '+i}`,`var(--m${i})`);
+    }
+    out+=clevis(A1,'A','var(--m1)')+clevis(A2,'B','var(--m2)');
+    out+=`<path d="${arc(J,61,180,180-q.th1)}" fill="none" stroke="var(--m1)" stroke-width="2"/><path d="${arc(J,61,0,q.th2)}" fill="none" stroke="var(--m2)" stroke-width="2"/>`;
+    for(const [i,sgn,th,start] of [[1,-1,q.th1,180],[2,1,q.th2,0]]){
+      const midAngle=i===1?180-q.th1/2:q.th2/2,a=point(J,midAngle,66),c={x:J.x+sgn*158,y:J.y-29};
+      out+=leader(a,c,`var(--m${i})`)+label('angle-'+i,c.x,c.y,`θ_${i} = ${th}°`,`var(--m${i})`);
+    }
+    out+=L(J.x,J.y+17,J.x,J.y+43,'stroke="var(--metal)" stroke-width="8"')+`<path d="M${f(J.x-25)} ${f(J.y+45)}Q${f(J.x)} ${f(J.y+25)} ${f(J.x+25)} ${f(J.y+45)}" fill="none" stroke="var(--metal)" stroke-width="3"/>`;
+    out+=machine(J.x,J.y+95,q.object,1.16);
+    out+=arrow(J.x,J.y+97,J.x,J.y+169,'var(--force)',prefix,'force',3.4);
+    out+=label('weight',J.x+137,J.y+134,`W = ${fmt(q.P)} kN`,'var(--force)')+leader({x:J.x+9,y:J.y+134},{x:J.x+66,y:J.y+134},'var(--force)');
+    out+=`<circle cx="${f(J.x)}" cy="${f(J.y)}" r="18" fill="var(--steel)" stroke="var(--metal)" stroke-width="2"/><circle cx="${f(J.x)}" cy="${f(J.y)}" r="12" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.3"/><text x="${f(J.x)}" y="${f(J.y)}" class="anchor-text" style="font-size:15px">J</text>`;
+    out+=`<text x="500" y="657" text-anchor="middle" class="svg-caption">Angles to the horizontal · Bolted clevis anchors A and B · Free pin joint J</text><text x="500" y="698" text-anchor="middle" class="svg-caption">The suspended load includes its lifting attachment · Slab → columns → base plates → foundations</text>`;
+    return out;
+  }
+  function platformGeometry(q){
+    const D={x:180,y:282},C={x:760,y:282},A={x:275,y:187},B={x:855,y:187};
+    const ratio=q.x/q.L,load={x:227.5+580*ratio,y:234.5},dimX=180+580*ratio;
+    return {A,B,C,D,load,dimX};
+  }
+  function drawPlatform(q,prefix,overlay){
+    const g=platformGeometry(q),{A,B,C,D,load,dimX}=g;let out='';
+    out+=`<path d="M114 537H825L949 384H238Z" fill="var(--concrete)" stroke="var(--hatch)" stroke-width="1.5"/><path d="M114 537H825L949 384H238Z" fill="url(#${prefix}-hatch)" opacity=".4"/><path d="M114 537H825V557H114ZM825 537L949 384V404L825 557Z" fill="var(--steel)" stroke="var(--hatch)"/>`;
+    const floorPoint=p=>({x:p.x,y:p.y+218});
+    function leg(p,letter){
+      const n=letter==='A'||letter==='D'?1:2,foot=floorPoint(p);
+      return `<g class="member-group member-${n}" data-member="${n}" role="button" tabindex="0" aria-label="Highlight ${n===1?'left':'right'} support pair"><g class="member-part">${rect(p.x-10,p.y+14,20,195,`fill="var(--steel)" stroke="var(--m${n})" stroke-width="1.8"`)}${L(p.x-4,p.y+17,p.x-4,p.y+202,'stroke="var(--metal)" stroke-width="3" opacity=".7"')}<path d="M${p.x-30} ${foot.y-9}h53l12 -12h-53Z" fill="var(--metal)" stroke="var(--ink)" stroke-width="1.2"/><path d="M${p.x-30} ${foot.y-9}h53v6h-53Z" fill="var(--steel)" stroke="var(--ink)" stroke-width="1"/>${bolt(p.x-23,foot.y-12)}${bolt(p.x+24,foot.y-15)}</g></g>`;
+    }
+    out+=leg(A,'A')+leg(B,'B');
+    // Rear crossbeam and front crossbeam are joined by the rigid deck.
+    out+=`<path d="M${A.x} ${A.y}H${B.x}L${C.x} ${C.y}H${D.x}Z" fill="var(--steel)" stroke="var(--metal)" stroke-width="2"/><path d="M${D.x} ${D.y}H${C.x}v17H${D.x}ZM${C.x} ${C.y}L${B.x} ${B.y}v17L${C.x} ${C.y+17}Z" fill="var(--concrete)" stroke="var(--metal)" stroke-width="1.5"/>`;
+    out+=L(227.5,234.5,807.5,234.5,'stroke="var(--datum)" stroke-width="2.2" stroke-dasharray="8 7"');
+    [A,B,C,D].forEach(p=>out+=bolt(p.x+2,p.y+3));
+    out+=leg(D,'D')+leg(C,'C');
+    // Hidden portions of the rear legs show the exact connection behind the deck.
+    for(const p of [A,B])out+=L(p.x,p.y+18,p.x,282,'stroke="var(--metal)" stroke-width="2" stroke-dasharray="5 5" opacity=".7"');
+    out+=L(load.x,load.y,dimX,282,'stroke="var(--datum)" stroke-width="1.5" stroke-dasharray="4 5" opacity=".8"');
+    out+=machine(load.x,load.y+1,q.object,1.1);
+    out+=arrow(load.x,101,load.x,load.y-60,'var(--force)',prefix,'force',3.5)+label('platform-load',load.x,75,`W = ${fmt(q.P)} kN`,'var(--force)');
+    out+=`<text x="224" y="155" class="svg-caption">A · rear left</text><text x="868" y="155" text-anchor="end" class="svg-caption">B · rear right</text>`;
+    out+=label('leg-A',A.x-50,A.y+168,'A','var(--m1)',16)+label('leg-B',B.x+45,B.y+166,'B','var(--m2)',16)+label('leg-D',D.x-46,D.y+173,'D','var(--m1)',16)+label('leg-C',C.x+46,C.y+173,'C','var(--m2)',16);
+    if(overlay){
+      for(const [name,p,n] of [['A',A,1],['B',B,2],['C',C,2],['D',D,1]]){
+        const sign=n===1?-1:1,x=p.x+sign*24;
+        out+=arrow(x,p.y+142,x,p.y+52,`var(--m${n})`,prefix,`m${n}`,3.1);
+      }
+    }
+    out+=dim('load-position',q.variant?dimX:D.x,q.variant?C.x:dimX,598,`${q.variant?'b':'x'} = ${fmt(q.variant?q.L-q.x:q.x)} m`,565,565)+dim('leg-span',D.x,C.x,662,`L = ${fmt(q.L)} m`,565,565);
+    out+=L(dimX,300,dimX,582,'stroke="var(--datum)" stroke-width="1.2" stroke-dasharray="4 5" opacity=".45"');
+    out+=`<text x="500" y="704" text-anchor="middle" class="svg-caption">Longitudinal centreline load · Rear legs A, B; front legs D, C · Distances along the platform</text>`;
+    return out;
+  }
+  function renderDiagram(q,options={}){
+    const prefix=(options.prefix||'main').replace(/[^a-z0-9-]/gi,'');
+    let defs=`<defs><pattern id="${prefix}-grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="var(--grid)" stroke-width=".6"/></pattern><pattern id="${prefix}-major" width="125" height="125" patternUnits="userSpaceOnUse"><rect width="125" height="125" fill="url(#${prefix}-grid)"/><path d="M125 0H0V125" fill="none" stroke="var(--grid)" stroke-width="1.1"/></pattern><pattern id="${prefix}-hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(40)"><path d="M0 0V9" stroke="var(--hatch)" stroke-width="1.5"/></pattern>`;
+    for(const [id,col] of [['force','var(--force)'],['m1','var(--m1)'],['m2','var(--m2)']])defs+=`<marker id="${prefix}-${id}-arrow" viewBox="0 0 12 12" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L11 6L1 11L4 6Z" fill="${col}"/></marker>`;
+    defs+='</defs>';
+    const caption=q.family==='platform'?'PLATFORM · ISOMETRIC':q.family==='cable'?'SUSPENSION · ELEVATION':'SUPPORT ASSEMBLY · ELEVATION';
+    let body=`<rect x="18" y="40" width="964" height="648" rx="12" fill="url(#${prefix}-major)"/><text x="22" y="26" class="svg-title">${caption}</text><text x="978" y="26" text-anchor="end" class="svg-title">${options.forces?'FORCE OVERLAY':'INSTALLED ASSEMBLY'} · SCHEMATIC</text>`;
+    body+=q.family==='cable'?drawCable(q,prefix,options.forces):q.family==='platform'?drawPlatform(q,prefix,options.forces):drawBeam(q,prefix,options.forces);
+    return `<svg class="drawing-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="${prefix}-title ${prefix}-desc" data-family="${q.family}" data-focus="${options.focus||0}"><title id="${prefix}-title">${esc(q.title)}</title><desc id="${prefix}-desc">${esc(q.statement+' '+q.assumptions+' '+q.note+' Find '+q.answerName+'.')}</desc>${defs}${body}</svg>`;
+  }
+  return {DEG,MARK_TOL,STEP_SCALE,MARK_TOL_100,W,H,int,pick,shuffle,clamp,fmt,n2,cents,esc,point,dist,lerp,textT,theta,mn,mo,math,angle,sin,cos,sub,parseHundredths,withinTolerance,mark,families,scenarios,newHistory,nextFamily,createQuestion,buildSet,fingerprint,validateQuestion,dataHTML,equilibriumMath,workingHTML,renderDiagram,beamGeometry,cableGeometry,platformGeometry,draft:{L,rect,beamShape,support,label,dim,arrow,machine,leader}};
+})();
+
+/* Adaptive civil-engineering extension.
+   Original five generators remain in CORE_ENGINE. Every new answer is obtained
+   from areas, centroids, force balance and linear moment equations. No quadratic
+   equation, calculus, indeterminate frame or unknown distributed-load span.
+   Selection happens AFTER marking, never in a pre-generated question batch. */
+const ENGINE = ((B) => {
+  const {int,pick,shuffle,fmt,n2,cents,esc,math,mn,sub,angle,sin,cos,DEG}=B;
+  const D=B.draft, unit=u=>`<mspace width=".3em"/><mtext>${esc(u)}</mtext>`;
+  const num=n=>`<mn>${Number(n.toFixed(9))}</mn>`;
+  const frac=(a,b)=>`<mfrac><mrow>${a}</mrow><mrow>${b}</mrow></mfrac>`;
+  const times='<mo>×</mo>', plus='<mo>+</mo>', equals='<mo>=</mo>';
+  const sym=s=>s.includes('_')?sub(...s.split('_')):`<mi>${esc(s)}</mi>`;
+  const product=(a,b)=>`${num(a)}${times}${num(b)}`;
+  const rounded=(n,u)=>math(`${mn(n)}${unit(u)}`);
+  const section=(n,t,c)=>`<div class="step"><div class="step-heading"><span class="step-number">${n}</span>${t}</div>${c}</div>`;
+  const answerBox=q=>`<div class="result-box">${math(`${q.symbol}${equals}${mn(q.answer)}${unit(q.unit)}`)}</div>`;
+  const specs=[
+    {id:'point',tier:0,group:'reactions',name:'One point load: support reaction',base:true},
+    {id:'moment-single',tier:0,group:'moments',name:'Moment of a point load'},
+    {id:'two',tier:1,group:'reactions',name:'Two point loads: support reaction',base:true},
+    {id:'udl',tier:1,group:'distributed',name:'Full-span UDL and point load',base:true},
+    {id:'cable',tier:1,group:'cables',name:'Two-cable joint',base:true},
+    {id:'platform',tier:1,group:'platforms',name:'Four-leg platform symmetry',base:true},
+    {id:'triangle-resultant',tier:2,group:'triangles',name:'Triangular load: equivalent force'},
+    {id:'partial-udl',tier:2,group:'distributed',name:'Partial UDL with a point load'},
+    {id:'moment-combined',tier:2,group:'moments',name:'Applied moment: UDL and point load'},
+    {id:'cantilever',tier:2,group:'moments',name:'Built-in support: resisting moment'},
+    {id:'unknown-load',tier:2,group:'inverse',name:'Infer an unknown point load'},
+    {id:'cable-rigging',tier:2,group:'cables',name:'Cable tension including rigging weight'},
+    {id:'platform-weight',tier:2,group:'platforms',name:'Platform legs including deck weight'},
+    {id:'triangle-reaction',tier:3,group:'triangles',name:'Triangular load: support reaction',requires:['triangle-resultant']},
+    {id:'triangle-moment',tier:3,group:'triangles',name:'Triangular load: applied moment',requires:['triangle-resultant']},
+    {id:'overhang',tier:3,group:'reactions',name:'Two bearings and a loaded overhang',requires:['two']},
+    {id:'section-moment',tier:3,group:'moments',name:'Bending moment at a specified section',requires:['two']},
+    {id:'triangle-point',tier:4,group:'triangles',name:'Partial triangular load and point load',requires:['triangle-reaction']},
+    {id:'trapezoid',tier:4,group:'distributed',name:'Trapezoidal load: rectangle plus triangle',requires:['triangle-reaction']}
+  ];
+  const byId=Object.fromEntries(specs.map(t=>[t.id,t]));
+  // Retain all supplied briefs; add civil-engineering alternatives to each core family.
+  const coreCivil={
+    point:[['Canal footbridge inspection','A stationary inspection cradle applies one concentrated load to a service beam on a canal footbridge.','crate'],['Precast stair landing support','A precast landing unit is held on a test beam, with its load idealised at one connection.','module'],['Drainage-pump installation','A pump installation fixture transfers a single load to a beam across a drainage chamber.','motor']],
+    udl:[['Station canopy services','A station canopy service beam carries a uniform services load and one drainage pump.','motor'],['Temporary pedestrian crossing','A temporary crossing beam carries a uniform deck load and a stationary inspection trolley.','crate'],['Water-treatment walkway','A walkway beam carries a uniform line load and an additional valve installation load.','module']],
+    two:[['Bridge bearing installation','Two stationary jacking loads act at separate points along a bridge installation crossbeam.','module'],['Precast units on a transfer beam','Two precast units apply separate point loads to a transfer beam between two bearings.','crate'],['Railway drainage access beam','Two maintenance units rest at different positions on an access beam beside a drainage chamber.','motor']],
+    cable:[['Precast chamber-unit lift','A precast chamber unit is held stationary below two cables during an idealised lifting calculation.','crate'],['Bridge inspection cradle','An inspection cradle is stationary below a pair of structural cable anchors.','module'],['Floodgate actuator installation','A floodgate actuator is held in static equilibrium beneath two overhead anchors.','motor']],
+    platform:[['Site survey equipment platform','A surveying equipment module rests on the longitudinal centreline of a rigid four-leg platform.','module'],['Drainage-pump maintenance stand','A drainage pump rests on the centreline of a rigid maintenance stand with four identical legs.','motor'],['Precast mould inspection table','A mould assembly sits on the centreline of a rigid four-leg inspection table.','crate']]
+  };
+  Object.entries(coreCivil).forEach(([id,items])=>B.scenarios[id].push(...items.map(([title,context,object])=>({title,context,object}))));
+  const contexts={
+    point:[['Temporary bridge crossbeam','A stationary maintenance load is carried by a temporary bridge crossbeam.'],['Valve installation beam','A valve installation unit is stationary on a service beam.'],['Precast landing trial','A precast landing test transfers a single vertical load to the beam.']],
+    partial:[['Part-loaded access walkway','A limited section of an access walkway is loaded uniformly; a separate equipment load acts outside that section.'],['Localised pipework on a service beam','Pipework occupies only part of a service beam, with a separate concentrated maintenance load.'],['Staged deck installation','One installed deck section applies a uniform line load; a separate pallet applies a point load.']],
+    uniform:[['Station canopy drainage beam','The beam carries a uniform line load and an additional drainage-equipment load.'],['Water-treatment access beam','A uniform access-deck load and one maintenance unit act on a supported beam.'],['Inspection walkway services','A services beam carries uniformly distributed loading and a concentrated inspection load.']],
+    cantilever:[['Built-in canopy bracket','A short canopy beam is built into a reinforced-concrete pier and supports an equipment load.'],['Reservoir access cantilever','A built-in access beam projects from a concrete structure. Its free end has no additional support.'],['Bridge inspection bracket','An idealised rigidly built-in inspection bracket carries its distributed loading and a point load.']],
+    triangular:[['Tapered deck-strip loading','A tapered tributary deck strip produces a line load that varies linearly across the stated length.'],['Variable-width canopy strip','A triangular tributary canopy area is idealised as a linearly varying downward line load.'],['Tapered formwork loading trial','A test load transferred by a tapered formwork strip increases linearly from zero to the stated peak.'],['Precast taper load test','A tapered test arrangement applies a triangular downward load profile to the supporting beam.']],
+    trapezoid:[['Canopy edge-beam load profile','A variable-width tributary canopy strip produces a line load with two non-zero end intensities.'],['Tapered access-deck support','A tapered deck strip gives a linearly varying downward load; the smaller end is not unloaded.'],['Non-uniform formwork support','The idealised load from a formwork strip varies linearly between the two stated end intensities.']],
+    overhang:[['Walkway beam beyond its bearing','A maintenance beam extends beyond bearing B. One load is between the bearings and another is on the overhang.'],['Precast unit transfer overhang','A transfer beam extends past its right bearing and carries a stationary load on that extension.'],['Bridge inspection extension','An inspection beam projects beyond its right bearing while remaining in contact with both supports.']],
+    section:[['Bridge crossbeam section check','A technician needs the bending moment at section C between two point loads on a bridge crossbeam.'],['Transfer beam internal-force check','A transfer beam carries two units. Evaluate the bending moment at the marked section, not at a support.'],['Walkway crossbeam calculation','A crossbeam carries two maintenance loads. Calculate the internal moment at the stated section.']],
+    inverse:[['Bearing-load investigation','A measured bearing reaction is available during a controlled static loading trial. Infer the unknown point load.'],['Crossbeam commissioning check','A commissioning technician knows one bearing reaction and the other applied load. Determine the missing load.'],['Temporary-support load record','A static support record gives the reaction at B. Use this to recover one unknown point load.']]
+  };
+  function newHistory(start=0){return {...B.newHistory(),extraSeen:new Set(),extraScenario:{},learning:{tier:B.clamp(Number(start)||0,0,2),streak:0,checked:0,correct:0,skills:{},repeat:null,confirm:null,last:null,recent:[],seenTemplates:[],selectionReason:'Initial core check'}}}
+  function skill(h,id){return h.learning.skills[id]||(h.learning.skills[id]={attempts:0,correct:0,errors:0,consecutiveErrors:0,independent:0,last:null,lastNumber:0})}
+  function eligible(t,h){return (t.requires||[]).every(id=>skill(h,id).correct>0)}
+  function selectTemplate(h){
+    const a=h.learning;
+    if(a.repeat){a.selectionReason='Repeat the same calculation with fresh values after an error';return a.repeat}
+    if(a.confirm){a.selectionReason='Confirm the same calculation without automatic scaffolding';return a.confirm}
+    if(a.checked===0){a.selectionReason='Initial calculation';return a.tier===0?'point':a.tier===1?'two':'udl'}
+    // Interleave retained families, including cables and platforms, without holding
+    // an able learner at the same question type. All five remain in the live pool.
+    if(a.checked%4===3){
+      const core=specs.filter(t=>t.base&&t.tier<=a.tier).sort((x,y)=>skill(h,x.id).attempts-skill(h,y.id).attempts||skill(h,x.id).lastNumber-skill(h,y.id).lastNumber);
+      const t=core.find(t=>t.id!==a.last)||core[0];a.selectionReason='Spaced return to a retained core family';return t.id;
+    }
+    let pool=specs.filter(t=>t.tier<=a.tier&&eligible(t,h)&&t.id!==a.last);
+    // At the ceiling, keep changing the actual method and geometry, not just loads.
+    const recent=a.recent.slice(-3);
+    pool.sort((x,y)=>{
+      const sx=skill(h,x.id),sy=skill(h,y.id);
+      const value=t=>{const s=skill(h,t.id);return (s.attempts===0?30:0)+Math.min(t.tier,a.tier)*5-s.attempts*2-(recent.includes(t.id)?20:0)+(s.errors>s.correct?4:0)};
+      return value(y)-value(x)||sx.lastNumber-sy.lastNumber||specs.indexOf(x)-specs.indexOf(y);
+    });
+    a.selectionReason='Fresh application matched to demonstrated understanding';return (pool[0]||byId.point).id;
+  }
+  function recordResult(h,q,correct){
+    const a=h.learning,s=skill(h,q.templateId);
+    s.attempts++;s.last=!!correct;s.lastNumber=++a.checked;a.last=q.templateId;a.recent.push(q.templateId);if(a.recent.length>12)a.recent.shift();
+    if(!a.seenTemplates.includes(q.templateId))a.seenTemplates.push(q.templateId);
+    if(correct){s.correct++;s.consecutiveErrors=0;a.correct++;a.repeat=null;
+      if(q.scaffold){a.confirm=q.templateId;a.streak=0}
+      else {s.independent++;a.confirm=null;if(q.tier>=a.tier){a.streak++;if(a.streak>=2&&a.tier<4){a.tier++;a.streak=0}}}
+    }else{s.errors++;s.consecutiveErrors++;a.repeat=q.templateId;a.confirm=null;a.streak=0}
+    return {tier:a.tier,repeat:a.repeat,confirm:a.confirm};
+  }
+  function scenario(group,h){
+    let bag=h.extraScenario[group];if(!bag?.length)bag=h.extraScenario[group]=shuffle(contexts[group]);
+    const [title,context]=bag.shift();return {title,context};
+  }
+  function rand(a,b,scaffold=false){return scaffold?int(Math.ceil(a*2),Math.floor(b*2))/2:int(Math.ceil(a*10),Math.floor(b*10))/10}
+  function equivalent(region){
+    const d=region.end-region.start,low=Math.min(region.w0,region.w1),diff=Math.abs(region.w1-region.w0),up=region.w1>region.w0;
+    const parts=[];
+    if(low>0)parts.push({P:low*d,a:region.start+d/2,label:diff?'W_rect':'W_u',kind:'uniform'});
+    if(diff>0)parts.push({P:diff*d/2,a:region.start+d*(up?2/3:1/3),label:low?'W_tri':'W_t',kind:'triangle'});
+    return parts;
+  }
+  function effects(q){return [...q.loads.map((p,i)=>({...p,label:`P_${i+1}`,kind:'point'})),...(q.regions||[]).flatMap(equivalent)]}
+  function solve(q){
+    q.equivalents=effects(q);q.total=q.equivalents.reduce((s,p)=>s+p.P,0);q.MA=q.equivalents.reduce((s,p)=>s+p.P*p.a,0);
+    q.RB=q.builtIn?0:q.MA/q.supportSpan;q.RA=q.total-q.RB;
+    if(q.task==='reaction')q.answer=q.ask==='A'?q.RA:q.RB;
+    else if(q.task==='applied-moment')q.answer=Math.abs(q.equivalents.reduce((s,p)=>s+p.P*(p.a-(q.pivot==='B'?q.supportSpan:0)),0));
+    else if(q.task==='fixed-moment')q.answer=q.MA;
+    else if(q.task==='resultant')q.answer=q.regions.flatMap(equivalent).reduce((s,p)=>s+p.P,0);
+    else if(q.task==='section')q.answer=q.RA*q.cut-q.equivalents.filter(p=>p.a<q.cut).reduce((s,p)=>s+p.P*(q.cut-p.a),0);
+    else if(q.task==='unknown')q.answer=q.loads[0].P;
+    return q;
+  }
+  function validateQuestion(q){
+    if(!q?.extended)return B.validateQuestion(q);
+    if(!Number.isFinite(q.answer)||q.answer<=0||!q.unit)return false;
+    if(q.templateId==='cable-rigging')return q.P>0&&Math.abs(q.T1*Math.sin(q.th1*DEG)+q.T2*Math.sin(q.th2*DEG)-q.P)<1e-8&&Math.abs(q.T1*Math.cos(q.th1*DEG)-q.T2*Math.cos(q.th2*DEG))<1e-8;
+    if(q.templateId==='platform-weight')return q.RL>0&&q.RR>0&&Math.abs(2*q.RL+2*q.RR-q.P-q.G)<1e-8&&Math.abs(2*q.RR*q.L-q.P*q.x-q.G*q.L/2)<1e-8;
+    const ef=effects(q),total=ef.reduce((s,p)=>s+p.P,0),moment=ef.reduce((s,p)=>s+p.P*p.a,0);
+    if(!q.L||q.loads.some(p=>p.P<=0||p.a<=0||p.a>q.L)||q.regions.some(r=>r.start<0||r.end>q.L+1e-9||r.end<=r.start||Math.min(r.w0,r.w1)<0))return false;
+    if(Math.abs(q.RA+q.RB-total)>1e-7||Math.abs((q.builtIn?q.MA:q.RB*q.supportSpan)-moment)>1e-7)return false;
+    return q.RA>0&&(q.builtIn||q.RB>0);
+  }
+  function stampCore(q,id,scaffold=false){const t=byId[id];q.templateId=id;q.tier=t.tier;q.unit='kN';q.scaffold=scaffold;q.extended=false;q.firstStep=id==='cable'?'Start with horizontal balance at J, then use vertical balance. Both cable angles are measured from the horizontal.':id==='platform'?'First find the total reaction of one pair of legs. Divide that reaction equally between the two legs in the pair.':id==='udl'?'Replace the full-span UDL by its total load at midspan. Then take moments about one support.':'Choose a support as the pivot. The reaction through that pivot has zero moment.';return q}
+  function createQuestion(id,h,forced={}){return stampCore(B.createQuestion(id,h,forced),id)}
+  function createTemplate(id,h,opts={}){
+    const t=byId[id];if(!t)throw Error('Unknown adaptive calculation.');
+    const scaffold=!!opts.scaffold;
+    if(t.base){let lastError;for(let retry=0;retry<60;retry++){let forced={};if(scaffold){if(['point','two','udl'].includes(id)){forced.L=pick([6,8,10]);forced.variant=0;if(id==='two')forced.loads=[{P:rand(10,36,true),a:forced.L*.25},{P:rand(16,44,true),a:forced.L*.75}];else forced.loads=[{P:rand(12,60,true),a:forced.L*pick([.25,.4,.6,.75])}];if(id==='udl')forced.w=rand(2,8,true)}else if(id==='cable'){forced={th1:pick([40,45,50]),th2:pick([55,60,65]),P:rand(10,36,true)}}else{forced={L:pick([2,3,4]),P:rand(12,32,true),x:pick([.75,1.25]),variant:0}}}
+      try{return stampCore(B.createQuestion(id,h,forced),id,scaffold)}catch(error){lastError=error}
+      }throw lastError;
+    }
+    for(let tries=0;tries<400;tries++){
+      if(id==='cable-rigging'||id==='platform-weight'){
+        const family=id==='cable-rigging'?'cable':'platform',q=stampCore(B.createQuestion(family,h),family,scaffold);
+        q.templateId=id;q.tier=t.tier;q.extended=true;q.G=rand(2,7,scaffold);q.baseFamily=family;
+        if(family==='cable'){
+          q.payload=q.P;q.P=q.payload+q.G;
+          q.T1=q.P*Math.cos(q.th2*DEG)/Math.sin((q.th1+q.th2)*DEG);q.T2=q.P*Math.cos(q.th1*DEG)/Math.sin((q.th1+q.th2)*DEG);q.answer=q.ask==='T1'?q.T1:q.T2;
+          q.title=pick(['Precast unit and lifting cradle','Floodgate actuator and lifting gear','Drainage module and rigging']);
+          q.context='The suspended assembly includes the payload and a separate lifting cradle. Both contributions must pass through the cables.';
+          q.statement=`The payload weighs ${fmt(q.payload)} kN and the cradle with lifting gear weighs ${fmt(q.G)} kN. Both act through joint J. Cable 1 is at ${q.th1}° and cable 2 is at ${q.th2}° to the horizontal. Find the requested cable tension, including both weights.`;
+          q.assumptions='Both weights act at J through the vertical hanger. Cable self-weight is neglected. The two overhead anchor pins are fixed in position and may rotate.';
+          q.data=[['Payload weight','P',q.payload,'kN'],['Cradle and gear','G',q.G,'kN'],['Left cable','θ_1',q.th1,'°'],['Right cable','θ_2',q.th2,'°']];
+          q.note='The arrow W represents the combined suspended weight. Do not omit the lifting gear.';q.firstStep='First add the payload weight and lifting-gear weight. Then resolve at J exactly as for the two-cable question.';
+        }else{
+          if(Math.abs(q.x/q.L-.5)<.18)continue;
+          q.RR=(q.P*q.x+q.G*q.L/2)/(2*q.L);q.RL=(q.P+q.G)/2-q.RR;q.answer=['A','D'].includes(q.ask)?q.RL:q.RR;
+          q.title=pick(['Drainage-pump platform and deck weight','Precast inspection table and self-weight','Site equipment stand with deck weight']);
+          q.context='A centreline equipment load sits on a rigid, symmetric four-leg platform. The platform itself also has weight.';
+          q.statement=`The equipment weighs ${fmt(q.P)} kN and acts ${fmt(q.x)} m from the left-hand legs. The platform has total weight ${fmt(q.G)} kN acting at its centre. The leg spacing is ${fmt(q.L)} m. Find the force in one named leg, not in a pair.`;
+          q.variant=0;q.assumptions='The four legs are identical and symmetrically placed, with every foot in contact. The rigid level platform has a central self-weight G. All loads lie on the longitudinal centreline.';
+          q.data=[['Equipment','W',q.P,'kN'],['Platform weight','G',q.G,'kN'],['Leg spacing','L',q.L,'m'],['Equipment from left','x',q.x,'m']];
+          q.note='Include G at the midpoint. Symmetry still gives R_A = R_D and R_B = R_C.';q.firstStep='Replace the platform self-weight by one central force G. Take moments for a pair of legs, then divide the pair reaction by two.';
+        }
+        q.key=JSON.stringify([id,q.L,q.P,q.payload,q.G,q.x,q.th1,q.th2,q.ask]);if(h.extraSeen.has(q.key)||!validateQuestion(q))continue;h.extraSeen.add(q.key);return q;
+      }
+      const q={family:'extension',extended:true,templateId:id,tier:t.tier,scaffold,L:rand(6,12,scaffold),loads:[],regions:[],ask:pick(['A','B']),task:'reaction',unit:'kN',w:0,variant:0,object:'crate',builtIn:false};
+      if(id==='cantilever')q.L=rand(2.5,5,scaffold);
+      q.supportSpan=q.L;
+      const ratio=(a,b)=>n2(q.L*pick(scaffold?[.25,.4,.6,.75]:Array.from({length:b-a+1},(_,i)=>(a+i)/100)));
+      let group='uniform';
+      if(id==='moment-single'){
+        group='point';q.loads=[{P:rand(12,65,scaffold),a:ratio(25,75)}];q.task='applied-moment';q.pivot=q.ask;
+      }else if(id==='moment-combined'||id==='cantilever'){
+        group=id==='cantilever'?'cantilever':'uniform';q.loads=[{P:id==='cantilever'?rand(5,18,scaffold):rand(10,35,scaffold),a:ratio(30,75)}];q.regions=[{start:0,end:q.L,w0:id==='cantilever'?rand(.6,2.4,scaffold):rand(2,6,scaffold),w1:0}];q.regions[0].w1=q.regions[0].w0;q.task=id==='cantilever'?'fixed-moment':'applied-moment';q.pivot='A';q.builtIn=id==='cantilever';q.ask='A';
+      }else if(id==='partial-udl'){
+        group='partial';const fromLeft=Math.random()<.5;q.regionSide=fromLeft?'left':'right';const s=fromLeft?0:n2(q.L*.4),e=fromLeft?n2(q.L*.6):q.L,w=rand(3,10,scaffold);q.regions=[{start:s,end:e,w0:w,w1:w}];q.loads=[{P:rand(12,40,scaffold),a:n2(q.L*(fromLeft?.83:.17))}];
+      }else if(id.startsWith('triangle')||id==='trapezoid'){
+        group=id==='trapezoid'?'trapezoid':'triangular';const up=Math.random()<.5,partial=id==='triangle-point';
+        const s=partial?n2(q.L*.18):0,e=partial?n2(q.L*.68):q.L,hi=rand(6,16,scaffold),lo=id==='trapezoid'?rand(2,4,scaffold):0;
+        q.regions=[{start:s,end:e,w0:up?lo:hi,w1:up?hi:lo}];
+        if(partial)q.loads=[{P:rand(10,32,scaffold),a:n2(q.L*.87)}];
+        if(id==='triangle-resultant')q.task='resultant';if(id==='triangle-moment'){q.task='applied-moment';q.pivot=q.ask}
+      }else if(id==='overhang'){
+        group='overhang';q.supportSpan=q.L;q.overhang=rand(1.5,2.5,scaffold);q.L=n2(q.supportSpan+q.overhang);
+        q.loads=[{P:rand(25,50,scaffold),a:n2(q.supportSpan*.35)},{P:rand(8,15,scaffold),a:n2(q.supportSpan+q.overhang*.75)}];
+        const w=rand(1,2.5,scaffold);q.regions=[{start:0,end:q.L,w0:w,w1:w}];
+      }else if(id==='section-moment'){
+        group='section';q.loads=[{P:rand(12,40,scaffold),a:n2(q.L*.25)},{P:rand(18,48,scaffold),a:n2(q.L*.76)}];q.cut=n2(q.L*pick([.45,.5,.55]));q.task='section';q.ask='C';
+      }else if(id==='unknown-load'){
+        group='inverse';const a1=n2(q.L*.28),a2=n2(q.L*.73),p2=rand(12,40,scaffold),target=rand(15,48,scaffold);
+        q.measuredRB=n2((target*a1+p2*a2)/q.L);const unknown=(q.measuredRB*q.L-p2*a2)/a1;
+        q.loads=[{P:unknown,a:a1,unknown:true},{P:p2,a:a2}];q.task='unknown';q.ask='P';
+      }
+      Object.assign(q,scenario(group,h));
+      solve(q);
+      if(q.RA<=2||q.RB<=2&&!q.builtIn)continue;
+      q.symbol=q.task==='reaction'?sub('R',q.ask):q.task==='unknown'?sub('P',1):q.task==='resultant'?'<mi>W</mi>':sub('M',q.task==='section'?'C':q.task==='fixed-moment'?'A':q.pivot);
+      if(['applied-moment','fixed-moment','section'].includes(q.task))q.unit='kN·m';
+      q.answerName=q.task==='reaction'?`Support ${q.ask} reaction`:q.task==='unknown'?'Unknown point load P₁':q.task==='resultant'?'Equivalent distributed load':q.task==='section'?'Bending moment at C':q.task==='fixed-moment'?'Resisting moment at A':`Applied-load moment about ${q.pivot}`;
+      q.taskHTML=q.task==='reaction'?`Find the upward reaction at support <span style="color:var(--m${q.ask==='A'?1:2})">${q.ask}</span>.`:q.task==='resultant'?'Find the magnitude of the single force equivalent to the triangular load.':q.task==='unknown'?'Calculate the unknown downward point load P₁.':q.task==='section'?'Calculate the sagging bending moment at section C.':q.task==='fixed-moment'?'Calculate the magnitude of the resisting moment at the built-in support A.':`Calculate the magnitude of the moment of the <em>applied loads only</em> about ${q.pivot}.`;
+      q.legend=q.builtIn?['A · built-in support','Free end · no support']:['Support A · pin','Support B · roller'];
+      q.fixing=q.builtIn?'<strong>The beam is built into the reinforced-concrete support at A.</strong><br>This connection restrains translation and rotation. The right-hand end is free.':'<strong>A is a pin bearing on a concrete foundation; B is a roller bearing on its foundation.</strong><br>The beam is seated on both bearings. Neither is a moment-resisting built-in end.';
+      q.assumptions=q.builtIn?'Use a rigid, ideal built-in support carrying an upward force and an anticlockwise resisting moment. All loads are vertical. The given UDL includes beam self-weight.':q.task==='unknown'?'Use the displayed reaction at B as exact for this idealised calculation. Beam self-weight is neglected. A and B remain in contact with the beam.':q.regions.length&&q.regions[0].w0===q.regions[0].w1&&q.regions[0].start===0&&q.regions[0].end===q.L?'The given UDL includes all distributed loading, including beam weight. All point loads are separate from that UDL.':'This is an isolated applied-load case. Beam self-weight is neglected unless explicitly included in a stated UDL. All shown loads act vertically downwards.';
+      q.note=q.task==='applied-moment'?`Report a positive magnitude. The applied loads turn ${q.pivot==='A'?'clockwise':'anticlockwise'} about ${q.pivot}; including the reactions would give zero net moment.`:q.task==='fixed-moment'?'The downward loads turn clockwise about A. The built-in support provides an equal anticlockwise resisting moment.':q.task==='section'?'Section C is not a support. Use the forces on one side of C; positive bending here is sagging.':q.task==='unknown'?'The shown reaction at B is given information, not another load to add to the downward forces.':q.templateId==='trapezoid'?'Split the trapezoid into a uniform rectangle and a triangle. Each part has its own equivalent force and centroid.':q.regions.some(r=>r.w0!==r.w1)?'A triangular profile is a uniformly varying load, not a UDL. The equivalent force acts one-third of the loaded length from the larger end.':'Use perpendicular distances from the stated pivot. Do not assume the total load is shared equally.';
+      q.firstStep=q.task==='unknown'?'Take moments about A. The known reaction at B times the support span equals the two load moments. Only P₁ is unknown.':q.task==='section'?'First find the reaction at A. Then isolate the beam to the left of C and take moments about C.':q.templateId==='trapezoid'?'Use the smaller intensity for the rectangular part. The difference between the end intensities is the height of the triangular part.':q.regions.some(r=>r.w0!==r.w1)?'Find the area under the load profile. For a triangle, its equivalent force acts one-third of the loaded length from the larger end.':q.regions.length?'Replace each loaded region by its total load acting at that region’s midpoint. Measure from the actual pivot, not automatically from the beam end.':'Moment = force × perpendicular distance. Identify the pivot and measure the load’s distance from that pivot.';
+      const sentences=[q.builtIn?`The beam projects ${fmt(q.L)} m from the built-in support A.`:q.overhang?`The support spacing A–B is ${fmt(q.supportSpan)} m and the right overhang is ${fmt(q.overhang)} m.`:`The span A–B is ${fmt(q.L)} m.`];
+      q.data=[[q.builtIn?'Projection length':'Support span',q.overhang?'S':'L',q.supportSpan,'m']];if(q.overhang)q.data.push(['Beyond support B','e',q.overhang,'m']);
+      q.regions.forEach(r=>{
+        const d=n2(r.end-r.start),full=r.start===0&&Math.abs(r.end-q.L)<1e-7;
+        if(r.w0===r.w1){sentences.push(`A UDL of ${fmt(r.w0)} kN/m acts ${full?'over the full beam length':`from ${fmt(r.start)} m to ${fmt(r.end)} m measured from A`}.`);q.data.push(['Line load','w',r.w0,'kN/m'])}
+        else{sentences.push(`The load intensity varies linearly from ${fmt(r.w0)} kN/m at ${full?'A':`C (${fmt(r.start)} m from A)`} to ${fmt(r.w1)} kN/m at ${full?'B':`D (${fmt(r.end)} m from A)`}.`);q.data.push([full?'Intensity at A':'Intensity at C',full?'w_A':'w_C',r.w0,'kN/m'],[full?'Intensity at B':'Intensity at D',full?'w_B':'w_D',r.w1,'kN/m'])}
+        if(!full){q.data.push(['Loaded length','d',d,'m']);if(r.start)q.data.push(['Start from A','s',r.start,'m'])}
+      });
+      q.loads.forEach((l,i)=>{const name=q.loads.length===1?'P':`P${i+1}`;sentences.push(`${name} ${l.unknown?'is unknown and acts':`= ${fmt(l.P)} kN acts`} at ${fmt(l.a)} m from A.`);if(!l.unknown)q.data.push([q.loads.length===1?'Point load':`Load ${i+1}`,q.loads.length===1?'P':`P_${i+1}`,l.P,'kN']);});
+      if(q.task==='unknown'){sentences.push(`The upward reaction at B is ${fmt(q.measuredRB)} kN.`);q.data.push(['Given reaction','R_B',q.measuredRB,'kN']);}
+      if(q.cut){sentences.push(`Section C is ${fmt(q.cut)} m from A, between the two loads.`);q.data.push(['Section from A','c',q.cut,'m']);}
+      if(q.task==='applied-moment')sentences.push('Ignore the support reactions when calculating this applied-load moment.');
+      q.statement=sentences.join(' ');
+      q.why=q.task==='section'?'A reaction describes what a foundation carries. A bending moment at a section describes the turning effect the beam must resist internally.':q.task==='unknown'?'Site and test data can be used to infer an unrecorded load. This checks your ability to rearrange a moment equation rather than always solve for a reaction.':q.task==='fixed-moment'?'A built-in connection must resist both force and rotation. A pin or roller cannot supply the resisting moment in this model.':q.overhang?'An overhanging load still acts on the entire beam. Use the distance between supports when finding a bearing reaction, not the total beam length.':q.regions.some(r=>r.w0!==r.w1)?'Tapered tributary areas and changing load intensities do not act at midspan by default. The position of the equivalent force matters as much as its magnitude.':'Local loading and off-centre equipment change the force transferred into each bearing and foundation.';
+      q.key=JSON.stringify([id,q.L,q.supportSpan,q.loads,q.regions,q.ask,q.pivot,q.cut,q.measuredRB]);
+      if(h.extraSeen.has(q.key)||!validateQuestion(q))continue;
+      h.extraSeen.add(q.key);return q;
+    }
+    throw Error('Could not generate a fresh valid calculation. Please start a new session.');
+  }
+  function nextAdaptive(h){const id=selectTemplate(h),a=h.learning,s=skill(h,id);const scaffold=a.repeat===id&&s.consecutiveErrors>=2&&!a.confirm;return createTemplate(id,h,{scaffold})}
+  function getUnit(q){return q.unit||'kN'}
+  function dataHTML(q){return B.dataHTML(q)}
+  function equilibriumMath(q){
+    if(!q.extended)return B.equilibriumMath(q);
+    if(q.templateId==='cable-rigging'){const eq=B.equilibriumMath(q);return {...eq,intro:'First add the payload and the lifting-gear weights. Then resolve horizontally and vertically at J.',extra:`<mi>W</mi>${equals}<mi>P</mi>${plus}<mi>G</mi>`}}
+    if(q.templateId==='platform-weight')return {intro:'The platform weight G acts at its centre. Each R is a single leg force; each pair contains two identical legs.',perp:`<mn>2</mn>${sub('R','L')}${plus}<mn>2</mn>${sub('R','R')}${equals}<mi>W</mi>${plus}<mi>G</mi>`,parallel:`<mn>2</mn>${sub('R','R')}<mi>L</mi>${equals}<mi>W</mi><mi>x</mi>${plus}<mi>G</mi>${frac('<mi>L</mi>','<mn>2</mn>')}`,end:'Take moments about the left pair, then use vertical force balance. Do not forget to divide a pair reaction by two.'};
+    const triangular=q.regions.some(r=>r.w0!==r.w1),trapezoid=q.templateId==='trapezoid';
+    const resultant=trapezoid?`${sub('W','rect')}${equals}${sub('w','min')}<mi>d</mi><mspace width="1em"/>${sub('W','tri')}${equals}${frac('<mn>1</mn>','<mn>2</mn>')}<mo>(</mo>${sub('w','max')}<mo>−</mo>${sub('w','min')}<mo>)</mo><mi>d</mi>`:triangular?`<mi>W</mi>${equals}${frac('<mn>1</mn>','<mn>2</mn>')}${sub('w','max')}<mi>d</mi>`:`<mi>W</mi>${equals}<mi>w</mi><mi>d</mi>`;
+    if(q.task==='resultant')return {intro:'The equivalent force is the area under the intensity diagram. Here d is the loaded length, not an unknown span.',perp:resultant,parallel:`<mi>M</mi>${equals}<mi>F</mi><mi>d</mi>`,end:'The triangular force acts one-third of d from the larger end. Use kN/m × m to obtain kN. No quadratic equation is needed.'};
+    if(q.task==='section')return {intro:'First determine the support reaction. Use the left-hand portion of the beam at section C.',perp:`${sub('R','B')}<mi>L</mi>${equals}${sub('P',1)}${sub('a',1)}${plus}${sub('P',2)}${sub('a',2)}`,parallel:`${sub('M','C')}${equals}${sub('R','A')}<mi>c</mi><mo>−</mo>${sub('P',1)}<mo>(</mo><mi>c</mi><mo>−</mo>${sub('a',1)}<mo>)</mo>`,end:'Use R_A = P₁ + P₂ − R_B. P₂ is to the right of C, so it is not on the isolated left-hand portion.'};
+    if(q.task==='unknown')return {intro:'Take moments about A. Both load positions and the support spacing are known; only P₁ is unknown.',perp:`${sub('R','B')}<mi>L</mi>${equals}${sub('P',1)}${sub('a',1)}${plus}${sub('P',2)}${sub('a',2)}`,parallel:`${sub('P',1)}${equals}${frac(`${sub('R','B')}<mi>L</mi><mo>−</mo>${sub('P',2)}${sub('a',2)}`,sub('a',1))}`,end:'Use the displayed measured reaction exactly. This is one linear equation; do not treat the unknown force as a distance.'};
+    const moment=`<mi>M</mi>${equals}<mo>Σ</mo><mo>(</mo><mi>F</mi><mi>d</mi><mo>)</mo>`;
+    return {intro:trapezoid?'Split the trapezoid into a rectangle and a triangle. Use a separate force and centroid for each part.':triangular?'Use the triangular area for the equivalent force. Its centroid is one-third of the loaded length from the larger end. Add any offset from A.':q.regions.length?'Replace the UDL by w × loaded length, at the midpoint of its loaded region. Include the separate point loads.':'Use the perpendicular distance from the named pivot to each load.',extra:q.regions.length?resultant:'',perp:q.task==='reaction'?`${sub('R','A')}${plus}${sub('R','B')}${equals}<mo>Σ</mo><mi>F</mi>`:moment,parallel:q.task==='reaction'?`${sub('R','B')}${q.overhang?'<mi>S</mi>':'<mi>L</mi>'}${equals}<mo>Σ</mo><mo>(</mo><mi>F</mi>${sub('x','A')}<mo>)</mo>`:q.task==='fixed-moment'?`${sub('M','A')}${equals}<mo>Σ</mo><mo>(</mo><mi>F</mi>${sub('x','A')}<mo>)</mo>`:moment,end:q.builtIn?'The resisting moment at A balances the clockwise applied moment. A is built in, not pinned.':q.task==='applied-moment'?'Include the applied loads only. Report a positive magnitude; the full system including reactions is in equilibrium.':'Keep centroid distances and load resultants unrounded until the final answer. The support span is the distance between bearings.'};
+  }
+  function equivalentWorking(q){
+    let out='';
+    for(const r of q.regions){
+      const d=n2(r.end-r.start),lo=Math.min(r.w0,r.w1),hi=Math.max(r.w0,r.w1),vary=hi-lo,up=r.w1>r.w0;
+      out+=`<p>Loaded length: ${rounded(d,'m')}${r.start?`; loaded region starts ${rounded(r.start,'m')} from A`:''}.</p>`;
+      if(lo){const ww=lo*d,xx=r.start+d/2;out+=math(`${sub('W',vary?'rect':'u')}${equals}${product(lo,d)}${equals}${num(ww)}${unit('kN')}`,true)+math(`${sub('x',vary?'rect':'u')}${equals}${num(r.start)}${plus}${frac(num(d),'<mn>2</mn>')}${equals}${num(xx)}${unit('m')}`,true)}
+      if(vary){out+=math(`${sub('W','tri')}${equals}${frac('<mn>1</mn>','<mn>2</mn>')}${times}${num(vary)}${times}${num(d)}${equals}${num(vary*d/2)}${unit('kN')}`,true);out+=`<p>The larger end is on the ${up?'right':'left'}. Measure one-third of the loaded length back from that end.</p>`+math(`${sub('x','tri')}${equals}${num(r.start)}${plus}${frac(`${up?'<mn>2</mn><mo>×</mo>':''}${num(d)}`, '<mn>3</mn>')}<mtext> m from A</mtext>`,true)}
+    }
+    return out||'<p>Use the labelled point loads and their distances from the pivot.</p>';
+  }
+  function leverMath(p,q,pivot=0){
+    let value=num(p.a);
+    if(p.kind==='triangle'){
+      const r=q.regions.find(r=>equivalent(r).some(v=>v.kind==='triangle'&&Math.abs(v.a-p.a)<1e-8&&Math.abs(v.P-p.P)<1e-8));
+      if(r){const d=n2(r.end-r.start);value=(r.start?`${num(r.start)}${plus}`:'')+frac(`${r.w1>r.w0?'<mn>2</mn><mo>×</mo>':''}${num(d)}`,'<mn>3</mn>');}
+    }
+    return pivot?`${num(pivot)}<mo>−</mo><mo>(</mo>${value}<mo>)</mo>`:value;
+  }
+  function momentTerm(p,q,pivot=0){return `${num(p.P)}${times}<mo>(</mo>${leverMath(p,q,pivot)}<mo>)</mo>`}
+  function workingHTML(q){
+    if(!q.extended)return B.workingHTML(q);
+    if(q.templateId==='cable-rigging'){
+      const base={...q,extended:false};return section('1','Include every suspended weight',math(`<mi>W</mi>${equals}${mn(q.payload)}${plus}${mn(q.G)}${equals}${num(q.P)}${unit('kN')}`,true))+B.workingHTML(base).replace(/class="step-number">([123])</g,(_,n)=>`class="step-number">${Number(n)+1}<`);
+    }
+    if(q.templateId==='platform-weight'){
+      const eq=equilibriumMath(q);
+      return section(1,'Use symmetry and include the deck weight',`<p>Each left leg carries ${math(sub('R','L'))} and each right leg carries ${math(sub('R','R'))}. G acts halfway between the pairs.</p>${math(eq.perp,true)}${math(eq.parallel,true)}`)+section(2,'Find a single right-leg force',math(`${sub('R','R')}${equals}${frac(`${product(q.P,q.x)}${plus}${product(q.G,q.L/2)}`,`<mn>2</mn>${times}${num(q.L)}`)}<mo>≈</mo>${mn(q.RR)}${unit('kN')}`,true)+math(`${sub('R','L')}${equals}${frac(`${num(q.P)}${plus}${num(q.G)}`,'<mn>2</mn>')}<mo>−</mo>${sub('R','R')}<mo>≈</mo>${mn(q.RL)}${unit('kN')}`,true))+section(3,`Report the force in leg ${q.ask}`,answerBox(q));
+    }
+    let prep=equivalentWorking(q),equation='',explain='',check='';
+    if(q.task==='resultant'){
+      equation=math(`<mi>W</mi>${equals}${q.equivalents.map(p=>num(p.P)).join(plus)}${unit('kN')}`,true);explain='A load intensity is not a force. The area under the intensity diagram gives the total force.';
+    }else if(q.task==='unknown'){
+      prep=`<p>The upward reaction at B is ${rounded(q.measuredRB,'kN')}. Take moments about A to eliminate the unknown reaction at A.</p>`;
+      equation=math(`${sub('P',1)}${times}${num(q.loads[0].a)}${plus}${product(q.loads[1].P,q.loads[1].a)}${equals}${product(q.measuredRB,q.L)}`,true)+math(`${sub('P',1)}${equals}${frac(`${product(q.measuredRB,q.L)}<mo>−</mo>${product(q.loads[1].P,q.loads[1].a)}`,num(q.loads[0].a))}`,true);explain='Subtract the known load moment, then divide by the unknown load’s perpendicular distance. This is a linear rearrangement.';
+    }else if(q.task==='section'){
+      prep=math(`${sub('R','B')}${equals}${frac(q.equivalents.map(p=>momentTerm(p,q)).join(plus),num(q.supportSpan))}<mo>≈</mo>${mn(q.RB)}${unit('kN')}`,true)+math(`${sub('R','A')}${equals}${num(q.total)}<mo>−</mo>${sub('R','B')}<mo>≈</mo>${mn(q.RA)}${unit('kN')}`,true)+'<p>Retain the unrounded reaction in the next calculation.</p>';
+      equation=math(`${sub('M','C')}${equals}${sub('R','A')}${times}${num(q.cut)}<mo>−</mo>${num(q.loads[0].P)}${times}<mo>(</mo>${num(q.cut)}<mo>−</mo>${num(q.loads[0].a)}<mo>)</mo>`,true);explain='Use only the loads on the left of C. The second point load is on the other side of the cut. The moment is positive (sagging).';
+    }else if(q.task==='reaction'){
+      equation=math(`${sub('R','B')}${equals}${frac(q.equivalents.map(p=>momentTerm(p,q)).join(plus),num(q.supportSpan))}<mo>≈</mo>${mn(q.RB)}${unit('kN')}`,true)+math(`${sub('R','A')}${equals}${num(q.total)}<mo>−</mo>${sub('R','B')}<mo>≈</mo>${mn(q.RA)}${unit('kN')}`,true);explain=q.overhang?'Divide the moment about A by the support spacing A–B, not by the overall beam length. The overhang load has a lever arm greater than A–B.':'Find the reaction at B from moments about A, then use vertical force balance for the reaction at A.';check=`Before rounding, the two support reactions add to ${fmt(q.total)} kN.`;
+    }else{
+      const pivot=q.pivot==='B'?q.supportSpan:0;
+      equation=math(`${q.symbol}${equals}${q.equivalents.map(p=>momentTerm(p,q,pivot)).join(plus)}${unit('kN·m')}`,true);explain=q.builtIn?'The built-in support must provide an equal anticlockwise resisting moment. It also provides the upward reaction; the moment is not a force.':`These are moments of the applied loads only. They act ${q.pivot==='B'?'anticlockwise':'clockwise'} about ${q.pivot}. Including the support reactions gives zero net moment.`;
+    }
+    return section(1,q.task==='section'?'Calculate the support reactions':'Read the load model and distances',prep)+section(2,'Apply equilibrium and the moment rule',`<p>${explain}</p>${equation}`)+section(3,'Round only the requested result',answerBox(q)+(check?`<p style="margin-top:10px">${check}</p>`:'')+'<p>All distances and load profiles are known. No quadratic equation or calculus is needed.</p>');
+  }
+  function customBeamBody(q,prefix,options){
+    const {L:line,rect,beamShape,support,label,dim,arrow,machine,leader}=D;
+    const A=156,end=844,x=m=>A+(end-A)*m/q.L,Bx=x(q.supportSpan);
+    let out=rect(70,463,860,14,`fill="url(#${prefix}-hatch)" opacity=".75"`)+line(70,462,930,462,'stroke="var(--hatch)" stroke-width="2"');
+    const projections=[A,end,Bx,...q.loads.map(p=>x(p.a)),...(q.regions||[]).flatMap(r=>[x(r.start),x(r.end)])];
+    for(const px of new Set(projections))out+=line(px,348,px,729,'stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 5" opacity=".23"');
+    if(q.builtIn){out+='<g class="member-group member-1" data-member="1" role="button" tabindex="0" aria-label="Highlight built-in support A"><g class="member-part">'+rect(76,114,80,348,'fill="var(--concrete)" stroke="var(--hatch)" stroke-width="2"')+rect(76,114,80,348,`fill="url(#${prefix}-hatch)" opacity=".7"`)+rect(65,452,102,10,'fill="var(--metal)" stroke="var(--ink)"');out+='</g></g>';out+=beamShape(A-25,end+7,314);out+=line(156,115,156,314,'stroke="var(--fixed)" stroke-width="3"')+line(156,347,156,451,'stroke="var(--fixed)" stroke-width="3"');}
+    else out+=support(A,'pin',prefix)+support(Bx,'roller',prefix)+beamShape(A-7,end+7,314);
+    q.regions.forEach((r,i)=>{
+      const left=x(r.start),right=x(r.end),hi=Math.max(r.w0,r.w1),y0=309,yL=y0-116*r.w0/hi,yR=y0-116*r.w1/hi;
+      if(options.resultants){
+        out+=line(left,196,right,196,'stroke="var(--force)" stroke-width="1.4" stroke-dasharray="5 5" opacity=".5"');
+        equivalent(r).forEach((p,j)=>{const xx=x(p.a),yy=j?119:72;out+=arrow(xx,yy+22,xx,309,'var(--force)',prefix,'force',3.4)+label(`resultant-${i}-${j}`,xx,yy,`${p.label} = ? kN`,'var(--force)',16);});
+      }else{
+        out+=`<path d="M${left} ${y0}V${yL}L${right} ${yR}V${y0}Z" fill="var(--force)" opacity=".095"/>`+line(left,yL,right,yR,'stroke="var(--force)" stroke-width="2"');
+        const count=8;
+        for(let j=0;j<=count;j++){const xx=left+(right-left)*j/count,yy=yL+(yR-yL)*j/count;if(y0-yy>8&&q.loads.every(p=>Math.abs(x(p.a)-xx)>45))out+=arrow(xx,yy,xx,y0,'var(--force)',prefix,'force',1.9)}
+        if(r.w0===r.w1)out+=label('uniform-intensity',(left+right)/2,72,`w = ${fmt(r.w0)} kN/m`,'var(--force)');
+        else{
+          const full=r.start===0&&r.end===q.L;
+          out+=label('intensity-left',left,125,`w_${full?'A':'C'} = ${fmt(r.w0)} kN/m`,'var(--force)',16)+label('intensity-right',right,125,`w_${full?'B':'D'} = ${fmt(r.w1)} kN/m`,'var(--force)',16);
+          out+=leader({x:left,y:144},{x:left,y:yL-5},'var(--force)')+leader({x:right,y:144},{x:right,y:yR-5},'var(--force)');
+          out+=`<text x="500" y="72" text-anchor="middle" class="svg-caption">${r.w0===0||r.w1===0?'Triangular, uniformly varying load':'Trapezoidal, linearly varying load'} · Intensity in kN/m</text>`;
+          if(!full){out+=label('loaded-end-C',left,368,'C','var(--datum)',15)+label('loaded-end-D',right,368,'D','var(--datum)',15)}
+        }
+      }
+    });
+    q.loads.forEach((p,i)=>{
+      const px=x(p.a),yy=q.regions.length?126:113,txt=q.loads.length>1?`P_${i+1}`:'P';
+      out+=machine(px,314,q.object,.95)+arrow(px,yy+24,px,261,'var(--force)',prefix,'force',3.4)+label(`point-${i}`,px,yy,`${txt} = ${p.unknown?'?':fmt(p.P)} kN`,'var(--force)',17);
+    });
+    if(options.forces||q.task==='unknown'){
+      const entries=q.builtIn?[[A,'A',1]]:[[A,'A',1],[Bx,'B',2]];
+      for(const [px,letter,n] of entries){
+        if(!options.forces&&letter!=='B')continue;
+        out+=arrow(px,447,px,363,`var(--m${n})`,prefix,`m${n}`,3.4);
+        const txt=q.task==='unknown'&&letter==='B'?`R_B = ${fmt(q.measuredRB)} kN`:`R_${letter} ↑`;
+        const lx=q.builtIn?A+65:letter==='A'?A-85:Math.min(911,Bx+85);
+        out+=label(`r-${letter}`,lx,408,txt,`var(--m${n})`,q.task==='unknown'&&letter==='B'?14:16);
+      }
+      if(q.builtIn)out+=`<path d="M310 401 A30 30 0 1 0 280 431" fill="none" stroke="var(--m1)" stroke-width="3" marker-end="url(#${prefix}-m1-arrow)"/>`+label('fixed-moment',300,460,'M_A ↺','var(--m1)',16);
+    }
+    out+=label('a-bearing',A,494,q.builtIn?'A · built in':'A · pin','var(--m1)',16);
+    out+=label('b-bearing',q.builtIn?end:Bx,494,q.builtIn?'Free end':'B · roller',q.builtIn?'var(--muted)':'var(--m2)',16);
+    q.loads.forEach((p,i)=>out+=dim(`point-distance-${i}`,A,x(p.a),551+i*53,`${q.loads.length>1?'a_'+(i+1):'a'} = ${fmt(p.a)} m`,518,518));
+    q.regions.forEach(r=>{
+      const full=r.start===0&&r.end===q.L;
+      if(!full){
+        if(r.start>0&&r.end<q.L)out+=dim('region-start',A,x(r.start),608,`s = ${fmt(r.start)} m`,518,518);
+        out+=dim('loaded-length',x(r.start),x(r.end),665,`d = ${fmt(r.end-r.start)} m`,518,518);
+      }
+    });
+    if(q.cut){const cx=x(q.cut);out+=line(cx,270,cx,435,'stroke="var(--datum)" stroke-width="2.4" stroke-dasharray="7 5"')+label('cut-C',cx,246,'Section C','var(--datum)',16)+dim('section-position',A,cx,666,`c = ${fmt(q.cut)} m`,518,518);}
+    if(q.overhang){out+=dim('support-span',A,Bx,729,`S = ${fmt(q.supportSpan)} m`,518,518)+dim('overhang',Bx,end,729,`e = ${fmt(q.overhang)} m`,518,518);}
+    else out+=dim('beam-length',A,end,729,`L = ${fmt(q.L)} m`,518,518);
+    out+=`<text x="500" y="791" text-anchor="middle" class="svg-caption">${options.resultants?'Equivalent forces replace distributed loads; do not add both representations.':q.builtIn?'A restrains rotation and translation · No support at the free end':q.overhang?'The beam extends past B · Dimensions originate at A unless labelled otherwise':'All dimensions are from A unless labelled otherwise · Hardware sizes are schematic'}</text>`;
+    return out;
+  }
+  function renderDiagram(q,options={}){
+    if(!q.extended)return B.renderDiagram(q,options);
+    const prefix=(options.prefix||'main').replace(/[^a-z0-9-]/gi,'');
+    if(q.baseFamily){
+      let svg=B.renderDiagram(q,options);
+      if(q.templateId==='cable-rigging'){
+        svg=svg.replace(`W = ${fmt(q.P)} kN`,'W = P + G').replace('The suspended load includes its lifting attachment','Add payload P and lifting gear G before resolving');
+      }else{
+        const xx=517.5;
+        svg=svg.replace('</svg>',D.arrow(xx,148,xx,231,'var(--force)',prefix,'force',3.1)+D.label('platform-weight',xx,125,`G = ${fmt(q.G)} kN`,'var(--force)',16)+'</svg>');
+      }
+      return svg;
+    }
+    let defs=`<defs><pattern id="${prefix}-grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="var(--grid)" stroke-width=".65"/></pattern><pattern id="${prefix}-hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(40)"><path d="M0 0V9" stroke="var(--hatch)" stroke-width="1.5"/></pattern>`;
+    for(const [id,col] of [['force','var(--force)'],['m1','var(--m1)'],['m2','var(--m2)']])defs+=`<marker id="${prefix}-${id}-arrow" viewBox="0 0 12 12" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L11 6L1 11L4 6Z" fill="${col}"/></marker>`;
+    defs+='</defs>';
+    return `<svg class="drawing-svg" viewBox="0 0 1000 810" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="${prefix}-title ${prefix}-desc" data-family="${q.templateId}" data-focus="${options.focus||0}"><title id="${prefix}-title">${esc(q.title)}</title><desc id="${prefix}-desc">${esc(q.statement+' '+q.assumptions+' '+q.note)}</desc>${defs}<rect x="18" y="40" width="964" height="737" rx="12" fill="url(#${prefix}-grid)"/><text x="22" y="26" class="svg-title">CIVIL ENGINEERING · BEAM ELEVATION</text><text x="978" y="26" text-anchor="end" class="svg-title">${options.resultants?'EQUIVALENT LOADS':options.forces?'FORCE OVERLAY':'INSTALLED ASSEMBLY'} · SCHEMATIC</text>${customBeamBody(q,prefix,options)}</svg>`;
+  }
+  function teacherHTML(h){
+    const a=h.learning;
+    return `<p>Questions are selected after each checked answer. An incorrect answer schedules a fresh question of the <strong>same calculation type</strong>. After two errors on that type, a first-step prompt is opened automatically. A correct scaffolded answer is followed by an independent confirmation.</p><p>Two independent correct answers at the current challenge range unlock the next range. Earlier skills return for spaced practice. Triangular reactions wait for an accepted triangular-resultant question. No speed-based progression is used.</p><div class="teacher-stats"><span><strong>${a.checked}</strong> checked</span><span><strong>${a.seenTemplates.length}</strong> calculation types visited</span><span><strong>${a.tier+1} / 5</strong> current range</span></div><p><strong>Next-selection rule:</strong> ${esc(a.repeat?`Fresh ${byId[a.repeat].name.toLowerCase()} calculation after an error`:a.confirm?`Independent confirmation: ${byId[a.confirm].name}`:'Fresh or spaced practice matched to demonstrated understanding')}.</p><div class="review-scroll"><table class="review-table"><thead><tr><th>Calculation</th><th>Checked</th><th>Accepted</th><th>Independent</th><th>Next review</th></tr></thead><tbody>${specs.map(t=>{const s=skill(h,t.id);return `<tr><td>${esc(t.name)}</td><td>${s.attempts}</td><td>${s.correct}</td><td>${s.independent}</td><td>${a.repeat===t.id?'Repeat next':a.confirm===t.id?'Confirm next':!s.attempts?'Not yet visited':s.last?'Spaced practice':'Needs practice'}</td></tr>`}).join('')}</tbody></table></div><p class="micro" style="margin-top:14px">This is a practice record, not a grade or a claim of mastery. No answers or question-stage labels are displayed in the learner workspace. The original five question families remain available throughout.</p>`;
+  }
+  return {...B,specs,byId,newHistory,createQuestion,createTemplate,nextAdaptive,recordResult,selectTemplate,skill,validateQuestion,equivalent,effects,solve,getUnit,dataHTML,equilibriumMath,workingHTML,renderDiagram,teacherHTML};
+})(CORE_ENGINE);
+
+
+const APP = (() => {
+  const E=ENGINE, $=id=>document.getElementById(id);
+  const state={active:false,phase:'setup',history:E.newHistory(),queue:[],position:0,q:null,locked:false,checked:0,correct:0,records:[],name:'Student',mode:'timed',batch:10,target:10,limit:1200,started:0,ended:0,deadline:null,timer:null,forces:false,resultants:false,focus:0,diagramFit:false,zoom:1};
+  let toastTimer=null;
+  function toast(text){$('toast').textContent=text;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,5000)}
+  function showError(error){console.error(error);toast(error instanceof Error?error.message:String(error))}
+  function safe(fn){return (...args)=>{try{return fn(...args)}catch(error){showError(error)}}}
+  function mmss(seconds){seconds=Math.max(0,Math.floor(seconds));return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`}
+  function setTheme(theme){
+    document.documentElement.dataset.theme=theme;
+    const label=theme==='dark'?'Light mode':'Dark mode';
+    $('themeLabel').textContent=label;$('themeBtn').setAttribute('aria-label',`Switch to ${label.toLowerCase()}`);
+    $('themeBtn').querySelector('use').setAttribute('href',theme==='dark'?'#i-sun':'#i-moon');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content',theme==='dark'?'#0a101b':'#eef3f7');
+    try{localStorage.setItem('statics-studio.v2.theme',theme)}catch(e){}
+  }
+  $('themeBtn').addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
+  setTheme(document.documentElement.dataset.theme);
+  $('fsBtn').addEventListener('click',async()=>{
+    try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else toast('Full screen is not supported in this browser. Use the Enlarge drawing control instead.')}catch(e){toast('The browser did not allow full screen. The Enlarge drawing control is still available.')}
+  });
+  document.addEventListener('fullscreenchange',()=>{const yes=!!document.fullscreenElement;$('fsLabel').textContent=yes?'Exit full screen':'Full screen';$('fsBtn').setAttribute('aria-label',yes?'Exit full screen':'Enter full screen')});
+  document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).close()));
+  document.querySelectorAll('.model-link').forEach(b=>b.addEventListener('click',()=>$('modelDialog').showModal()));
+  $('helpBtn').addEventListener('click',()=>$('modelDialog').showModal());
+  function updateModeFields(){const mode=document.querySelector('input[name=mode]:checked').value;$('timedField').hidden=mode!=='timed';$('targetField').hidden=mode!=='target'}
+  document.querySelectorAll('input[name=mode]').forEach(r=>r.addEventListener('change',updateModeFields));
+  updateModeFields();
+  function closeTransient(){for(const id of ['zoomDialog','newDialog','modelDialog','teacherDialog','reviewDialog'])if($(id).open)$(id).close();closeCalculator(false)}
+  function updateTop(){
+    $('whoName').textContent=state.name;$('whoName').title=state.name;
+    $('modeTxt').textContent=state.mode==='target'?'Correct-answer target':state.limit?'Timed practice':'Unlimited practice';
+    $('targetTxt').textContent=state.mode==='target'?`${state.correct} of ${state.target}`:`Question ${state.checked+(state.locked?0:1)}`;
+    $('scoreTopVal').textContent=`${state.correct} / ${state.checked}`;
+    $('timerLabel').textContent=state.deadline?'Time remaining':'Time elapsed';
+    tick();
+  }
+  function tick(){
+    if(!state.active)return;
+    const now=Date.now(),remaining=state.deadline?Math.max(0,Math.ceil((state.deadline-now)/1000)):null;
+    $('timeTxt').textContent=remaining===null?mmss((now-state.started)/1000):mmss(remaining);
+    $('timeTxt').classList.toggle('timer-warning',remaining!==null&&remaining<=60);
+    if(state.deadline&&now>=state.deadline)finish('Time is up.');
+  }
+  document.addEventListener('visibilitychange',tick);
+  function startSession(event){
+    if(event)event.preventDefault();
+    const mode=document.querySelector('input[name=mode]:checked').value;
+    const target=Number($('targetInput').value),batch=Number($('qtyInput').value);
+    $('setupError').hidden=true;
+    if(mode==='target'&&(!Number.isInteger(target)||target<1||target>1000)){$('setupError').textContent='Choose a whole-number target from 1 to 1000.';$('setupError').hidden=false;$('targetInput').focus();return}
+    if(![8,10,12,15].includes(batch))throw Error('Choose a valid batch size.');
+    const limit=mode==='timed'?Number(document.querySelector('input[name=tlimit]:checked').value):0;
+    if(![0,600,1200,1800].includes(limit))throw Error('Choose a valid time limit.');
+    const history=E.newHistory(Number($('teacherStart').value)),queue=[E.nextAdaptive(history)];
+    clearInterval(state.timer);
+    state.name=$('nameInput').value.trim()||'Student';state.mode=mode;state.batch=batch;state.target=target;state.limit=limit;
+    state.history=history;state.queue=queue;state.position=0;state.checked=0;state.correct=0;state.records=[];state.locked=false;state.forces=false;state.resultants=false;state.focus=0;state.started=Date.now();state.ended=0;state.deadline=limit?state.started+limit*1000:null;
+    state.phase='question';state.active=true;
+    closeTransient();$('startScreen').hidden=true;$('endScreen').hidden=true;$('sessionScreen').hidden=false;
+    renderQuestion();updateTop();state.timer=setInterval(tick,400);
+    window.scrollTo({top:0,behavior:'instant'});
+  }
+  $('setupForm').addEventListener('submit',safe(startSession));
+  function openSetup(){
+    $('setupModalHome').appendChild($('setupCard'));
+    $('newWarning').hidden=false;
+    $('newWarning').textContent=state.active?'Starting a new session resets the score and adaptive learning record. A running timer continues until you start again.':'Choose settings for a fresh session. The previous summary stays available until you start.';
+    $('cancelSetupBtn').hidden=false;$('cancelSetupBtn').textContent=state.active?'Keep current session':'Back to summary';
+    $('setupError').hidden=true;$('newDialog').showModal();
+  }
+  $('newBtn').addEventListener('click',openSetup);$('restartBtn').addEventListener('click',openSetup);
+  $('cancelSetupBtn').addEventListener('click',()=>$('newDialog').close());
+  $('newDialog').addEventListener('close',()=>{$('setupHome').appendChild($('setupCard'));$('newWarning').hidden=true;$('cancelSetupBtn').hidden=true});
+  function renderQuestion(){
+    if(!state.active)return;
+    state.q=state.queue[state.position];state.locked=false;state.forces=false;state.resultants=false;state.focus=0;state.diagramFit=window.innerWidth<=720;
+    const q=state.q,number=state.checked+1;
+    $('drawingId').textContent=`ENGINEERING BRIEF / ${String(number).padStart(2,'0')}`;$('progress').textContent=`Question ${number}`;
+    $('qTitle').textContent=q.title;$('context').textContent=q.context;
+    const statement=E.esc(q.statement).replace(/\bP([12])\b/g,(_,n)=>E.math(E.sub('P',n)));
+    $('statement').innerHTML=statement.split(/(?<=[.!?])\s+(?=[A-Z])/).map(s=>`<p>${s}</p>`).join('');
+    $('dataStrip').innerHTML=E.dataHTML(q);
+    const selected=q.ask==='A'||q.ask==='D'||q.ask==='T1'?1:2;
+    const task=q.family==='cable'?`Find the tension in <span style="color:var(--m${selected})">cable ${q.ask==='T1'?1:2}</span>.`:q.family==='platform'?`Find the vertical force in <span style="color:var(--m${selected})">leg ${q.ask}</span>.`:`Find the vertical reaction at <span style="color:var(--m${selected})">support ${q.ask}</span>.`;
+    $('taskTitle').innerHTML=q.taskHTML||task;
+    const currentUnit=E.getUnit(q);$('unitOut').textContent=currentUnit;
+    $('precisionNote').innerHTML=`Round to 2 decimal places.<br>Answers within <strong>±1.00 ${currentUnit}</strong> are accepted, in <strong>0.01 ${currentUnit}</strong> steps.<br>Whole numbers do not need “.00”.`;
+    $('equivalentBtn').hidden=!(q.extended&&!q.baseFamily&&q.regions?.length);
+    $('answerLabel').innerHTML=`${E.math(q.symbol)} · ${E.esc(q.answerName)}`;
+    $('fixingText').innerHTML=q.fixing;$('assumptionsText').textContent=q.assumptions;
+    $('drawingNote').innerHTML=E.esc(q.note).replace(/R_([A-D])/g,(_,n)=>E.math(E.sub('R',n)));
+    $('legend1').textContent=q.legend[0];$('legend2').textContent=q.legend[1];document.querySelector('.legend-member[data-focus="2"]').disabled=!!q.builtIn;
+    const eq=E.equilibriumMath(q);
+    $('hintContent').innerHTML=`${q.scaffold?`<div class="support-prompt"><strong>A useful first step</strong>${E.esc(q.firstStep)}</div>`:''}<p>${E.esc(eq.intro).replace(/R_([LR])/g,(_,n)=>E.math(E.sub('R',n)))}</p>${eq.extra?E.math(eq.extra,true):''}${E.math(eq.perp,true)}${E.math(eq.parallel,true)}<p>${E.esc(eq.end)}</p>`;
+    $('whyText').textContent=q.why||(q.family==='cable'?'Cable tensions are the forces transferred into the anchor connections. Their vertical components support the suspended load; their horizontal components balance.':q.family==='platform'?'A load away from the middle does not divide equally between all four legs. The reactions identify the load carried by each support and its base plate.':'Reactions are the forces carried by the bearings and foundations. The position and distribution of the applied load determine how much each support carries.');
+    $('ansVal').value='';$('ansVal').disabled=false;$('ansVal').removeAttribute('aria-invalid');$('fbAns').hidden=true;$('fbAns').textContent='';$('fbAns').className='feedback';
+    $('checkBtn').disabled=false;$('nextBtn').disabled=true;$('nextBtn').textContent='Next question →';$('workingDetails').hidden=true;$('workingDetails').open=false;$('workedSolution').innerHTML='';$('hintDetails').open=!!q.scaffold;$('whyDetails').open=false;
+    renderDrawing();updateTop();
+  }
+  function renderDrawing(){
+    const scroll=$('drawingScroll'),oldScroll=scroll.scrollLeft;
+    $('drawing').innerHTML=E.renderDiagram(state.q,{prefix:'main',forces:state.forces,resultants:state.resultants,focus:state.focus});
+    $('assemblyBtn').setAttribute('aria-pressed',String(!state.forces&&!state.resultants));$('forcesBtn').setAttribute('aria-pressed',String(state.forces&&!state.resultants));$('equivalentBtn').setAttribute('aria-pressed',String(state.resultants));
+    document.querySelectorAll('.legend-member').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.focus)===state.focus)));
+    scroll.classList.toggle('fit-view',state.diagramFit);
+    $('fitDrawingBtn').textContent=state.diagramFit?'Detail':'Fit';
+    $('fitDrawingBtn').setAttribute('aria-label',state.diagramFit?'Show larger diagram with horizontal scrolling':'Fit the whole diagram to the screen');
+    $('smallScreenNote').textContent=state.diagramFit?'Whole assembly shown. Select Enlarge or Detail to inspect labels.':'Scroll sideways to inspect the drawing, or select Enlarge.';
+    wireDiagram($('drawing'));
+    requestAnimationFrame(()=>{scroll.scrollLeft=oldScroll||Math.max(0,(scroll.scrollWidth-scroll.clientWidth)/2)});
+    if($('zoomDialog').open)renderZoom(false);
+  }
+  function focusMember(i){state.focus=state.focus===i?0:i;document.querySelectorAll('#drawing .drawing-svg,#zoomDrawing .drawing-svg').forEach(s=>s.dataset.focus=state.focus);document.querySelectorAll('.legend-member').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.focus)===state.focus)))}
+  function wireDiagram(container){
+    container.querySelectorAll('[data-member]').forEach(g=>{g.addEventListener('click',()=>focusMember(Number(g.dataset.member)));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();focusMember(Number(g.dataset.member))}})});
+  }
+  document.querySelectorAll('.legend-member').forEach(b=>b.addEventListener('click',()=>focusMember(Number(b.dataset.focus))));
+  $('fitDrawingBtn').addEventListener('click',safe(()=>{state.diagramFit=!state.diagramFit;renderDrawing()}));
+  const smallDiagramMedia=window.matchMedia('(max-width: 720px)');
+  smallDiagramMedia.addEventListener('change',e=>{if(state.active){state.diagramFit=e.matches;renderDrawing()}});
+  $('assemblyBtn').addEventListener('click',safe(()=>{state.forces=false;state.resultants=false;renderDrawing()}));$('forcesBtn').addEventListener('click',safe(()=>{state.forces=true;state.resultants=false;renderDrawing()}));$('equivalentBtn').addEventListener('click',safe(()=>{state.forces=true;state.resultants=true;renderDrawing()}));
+  function checkCurrent(event){
+    if(event)event.preventDefault();
+    if(!state.active||!state.q||state.locked||$('newDialog').open)return;
+    if(state.deadline&&Date.now()>=state.deadline){finish('Time is up.');return}
+    const raw=$('ansVal').value.trim(),result=E.mark(raw,state.q.answer);
+    if(!result.ok){$('fbAns').className='feedback no';$('fbAns').textContent=result.message;$('fbAns').hidden=false;$('ansVal').setAttribute('aria-invalid','true');$('ansVal').focus();return}
+    state.locked=true;state.checked++;if(result.correct)state.correct++;
+    E.recordResult(state.history,state.q,result.correct);
+    state.records.push({number:state.checked,title:state.q.title,quantity:state.q.answerName,input:result.value,expected:result.expected,correct:result.correct,unit:E.getUnit(state.q),question:state.q});
+    $('ansVal').removeAttribute('aria-invalid');$('ansVal').disabled=true;$('checkBtn').disabled=true;$('nextBtn').disabled=false;
+    const lo=E.fmt(result.expected-E.MARK_TOL),hi=E.fmt(result.expected+E.MARK_TOL);
+    $('fbAns').className=`feedback ${result.correct?'ok':'no'}`;
+    $('fbAns').innerHTML=`<strong>${result.correct?'✓ Accepted':'Not within the accepted range'}</strong>Calculated value: <strong style="display:inline;font-size:inherit">${E.fmt(result.expected)} ${E.getUnit(state.q)}</strong>.<span class="range">Accepted: ${lo} to ${hi} ${E.getUnit(state.q)}, inclusive.</span>${result.correct?'':'<span class="range">Read the worked solution. The next brief uses the same method with fresh values.</span>'}`;
+    $('fbAns').hidden=false;$('workingDetails').hidden=false;$('workedSolution').innerHTML=E.workingHTML(state.q);
+    updateTop();
+    if(state.mode==='target'&&state.correct>=state.target){finish('Target achieved.');return}
+  }
+  $('answerForm').addEventListener('submit',safe(checkCurrent));
+  function nextQuestion(){
+    if(!state.active||!state.locked)return;
+    if(state.deadline&&Date.now()>=state.deadline){finish('Time is up.');return}
+    const next=E.nextAdaptive(state.history);
+    if(state.position+1>=state.batch){state.queue=[next];state.position=0}else{state.queue.push(next);state.position++;}
+    renderQuestion();
+    if(window.innerWidth>950)$('ansVal').focus({preventScroll:true});
+    else $('qTitle').scrollIntoView({block:'start',behavior:'smooth'});
+  }
+  $('nextBtn').addEventListener('click',safe(nextQuestion));
+  // Keyboard submission is scoped to the answer form. Enter in setup, notes or
+  // the calculator never submits or advances a question.
+  document.addEventListener('keydown',safe(e=>{
+    if(e.key!=='Enter'||e.repeat||!state.active||!state.locked)return;
+    if(document.querySelector('dialog[open]')||!$('calculator').hidden)return;
+    if(e.target===document.body||e.target===$('ansVal')){e.preventDefault();nextQuestion()}
+  }));
+  function finish(message='Session finished.'){
+    if(!state.active)return;
+    clearInterval(state.timer);state.timer=null;state.active=false;state.phase='summary';state.ended=Date.now();
+    closeTransient();$('sessionScreen').hidden=true;$('startScreen').hidden=true;$('endScreen').hidden=false;
+    $('endTitle').textContent=message.startsWith('Target')?'Target achieved':message.startsWith('Time')?'Time is up':'Session complete';
+    $('endMsg').textContent=state.checked?`You checked ${state.checked} engineering ${state.checked===1?'brief':'briefs'} and answered ${state.correct} within the accepted range.`:'No answers were checked in this session.';
+    $('sumScore').textContent=`${state.correct} / ${state.checked}`;$('sumAccuracy').textContent=state.checked?`${Math.round(state.correct/state.checked*100)}%`:'—';
+    const elapsed=Math.max(0,(Math.min(state.ended,state.deadline??Infinity)-state.started)/1000);$('sumTime').textContent=mmss(elapsed);
+    $('summaryInfo').textContent=`${state.name} · ${state.mode==='target'?`Target: ${state.target} correct answers`:state.limit?`${state.limit/60}-minute timed practice`:'Unlimited practice'} · ±1.00 in the displayed unit. Select a brief below to review its working.`;
+    $('reviewBody').innerHTML=state.records.length?state.records.map(r=>`<tr><td><button type="button" class="review-link" data-review="${r.number-1}">${r.number}. ${E.esc(r.title)}</button></td><td>${E.esc(r.quantity)}</td><td class="mono">${E.fmt(r.input)} ${E.esc(r.unit)}</td><td class="mono">${E.fmt(r.expected)} ${E.esc(r.unit)}</td><td class="${r.correct?'correct':'incorrect'}">${r.correct?'Accepted':'Outside range'}</td></tr>`).join(''):'<tr><td colspan="5">No answers submitted.</td></tr>';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  $('finishBtn').addEventListener('click',()=>finish());
+  function renderZoom(reset=false){
+    if(reset)state.zoom=1;
+    const viewport=$('zoomViewport');const oldX=viewport.scrollLeft,oldY=viewport.scrollTop;
+    $('zoomDrawing').innerHTML=E.renderDiagram(state.q,{prefix:'zoom',forces:state.forces,resultants:state.resultants,focus:state.focus});wireDiagram($('zoomDrawing'));
+    sizeZoom();if(!reset){viewport.scrollLeft=oldX;viewport.scrollTop=oldY}
+  }
+  function sizeZoom(){
+    const v=$('zoomViewport'),base=Math.min(v.clientWidth,Math.max(180,v.clientHeight)*E.W/(state.q.extended&&!state.q.baseFamily?810:E.H));
+    $('zoomDrawing').style.width=`${Math.max(100,base*state.zoom)}px`;$('zoomDrawing').style.margin='0 auto';
+    $('zoomPercent').textContent=`${Math.round(state.zoom*100)}%`;$('zoomOut').disabled=state.zoom<=.75;$('zoomIn').disabled=state.zoom>=3;
+  }
+  $('enlargeBtn').addEventListener('click',safe(()=>{$('zoomTitle').textContent=state.q.title;$('zoomDialog').showModal();renderZoom(true)}));
+  function changeZoom(delta){const v=$('zoomViewport'),old=state.zoom,centreX=(v.scrollLeft+v.clientWidth/2)/Math.max(1,$('zoomDrawing').clientWidth),centreY=(v.scrollTop+v.clientHeight/2)/Math.max(1,$('zoomDrawing').clientHeight);state.zoom=E.clamp(Math.round((state.zoom+delta)*100)/100,.75,3);sizeZoom();if(old!==state.zoom){v.scrollLeft=centreX*$('zoomDrawing').clientWidth-v.clientWidth/2;v.scrollTop=centreY*$('zoomDrawing').clientHeight-v.clientHeight/2}}
+  $('zoomIn').addEventListener('click',()=>changeZoom(.25));$('zoomOut').addEventListener('click',()=>changeZoom(-.25));$('zoomFit').addEventListener('click',()=>{state.zoom=1;sizeZoom();$('zoomViewport').scrollTo(0,0)});
+  window.addEventListener('resize',()=>{if($('zoomDialog').open)sizeZoom();clampCalculator()});
+  let pan=null;
+  $('zoomViewport').addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0||e.target.closest('[data-member]'))return;pan={x:e.clientX,y:e.clientY,left:$('zoomViewport').scrollLeft,top:$('zoomViewport').scrollTop};$('zoomViewport').setPointerCapture(e.pointerId);$('zoomViewport').classList.add('dragging')});
+  $('zoomViewport').addEventListener('pointermove',e=>{if(!pan)return;$('zoomViewport').scrollLeft=pan.left-(e.clientX-pan.x);$('zoomViewport').scrollTop=pan.top-(e.clientY-pan.y)});
+  for(const type of ['pointerup','pointercancel'])$('zoomViewport').addEventListener(type,()=>{pan=null;$('zoomViewport').classList.remove('dragging')});
+
+  // Offline scientific calculator: recursive-descent expression parser, no eval.
+  const calcState={ans:0,drag:null};
+  function calculate(raw,lastAnswer=0){
+    let source=String(raw).replace(/×/g,'*').replace(/÷/g,'/').replace(/[−–]/g,'-').replace(/π/g,'pi').replace(/√/g,'sqrt').replace(/\s/g,'').toLowerCase();
+    if(!source)throw Error('Enter a calculation.');if(source.length>240)throw Error('This expression is too long.');
+    const tokens=[];let pos=0;
+    while(pos<source.length){
+      const rest=source.slice(pos),num=/^(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?/.exec(rest),word=/^[a-z]+/.exec(rest);
+      if(num){tokens.push({type:'number',value:Number(num[0])});pos+=num[0].length}
+      else if(word){tokens.push({type:'word',value:word[0]});pos+=word[0].length}
+      else if('+-*/^()'.includes(source[pos]))tokens.push({type:source[pos++]});
+      else throw Error('Use numbers, brackets and the calculator functions.');
+    }
+    let at=0;const current=()=>tokens[at]?.type,consume=t=>current()===t?(at++,true):false;
+    const functions={sin:n=>Math.sin(n*E.DEG),cos:n=>Math.cos(n*E.DEG),tan:n=>{if(Math.abs(Math.cos(n*E.DEG))<1e-12)throw Error('Tan is undefined at this angle.');return Math.tan(n*E.DEG)},asin:n=>{if(Math.abs(n)>1)throw Error('Inverse sine needs a value from −1 to 1.');return Math.asin(n)/E.DEG},acos:n=>{if(Math.abs(n)>1)throw Error('Inverse cosine needs a value from −1 to 1.');return Math.acos(n)/E.DEG},atan:n=>Math.atan(n)/E.DEG,sqrt:n=>{if(n<0)throw Error('Use a non-negative square root.');return Math.sqrt(n)}};
+    function primary(){
+      if(consume('(')){const v=sum();if(!consume(')'))throw Error('Close the bracket.');return v}
+      const tok=tokens[at++];if(!tok)throw Error('Complete the expression.');
+      if(tok.type==='number')return tok.value;
+      if(tok.type==='word'){
+        if(tok.value==='pi')return Math.PI;if(tok.value==='ans')return lastAnswer;
+        const fn=functions[tok.value];if(!fn)throw Error('Unknown calculator function.');
+        if(!consume('('))throw Error('Use brackets after a function.');const v=sum();if(!consume(')'))throw Error('Close the function bracket.');return fn(v);
+      }
+      throw Error('Check the numbers and operators.');
+    }
+    function power(){let v=primary();if(consume('^'))v=Math.pow(v,unary());return v}
+    function unary(){if(consume('+'))return unary();if(consume('-'))return -unary();return power()}
+    function product(){let v=unary();for(;;){if(consume('*'))v*=unary();else if(consume('/')){const d=unary();if(d===0)throw Error('Cannot divide by zero.');v/=d}else return v}}
+    function sum(){let v=product();for(;;){if(consume('+'))v+=product();else if(consume('-'))v-=product();else return v}}
+    const result=sum();if(at!==tokens.length)throw Error('Check the expression. Use × between terms.');if(!Number.isFinite(result))throw Error('This calculation has no finite real answer.');return Math.abs(result)<1e-12?0:result;
+  }
+  const inverse=fn=>E.math(`<msup><mi mathvariant="normal">${fn}</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup>`);
+  const calcKeys=[
+    ['sin','sin(','function-key'],['cos','cos(','function-key'],['tan','tan(','function-key'],[E.math('<msqrt><mi>x</mi></msqrt>'),'sqrt(','function-key'],
+    [inverse('sin'),'asin(','function-key'],[inverse('cos'),'acos(','function-key'],[inverse('tan'),'atan(','function-key'],[E.math('<msup><mi>x</mi><mi>y</mi></msup>'),'^','function-key'],
+    ['(','(',''],[')',')',''],['π','pi','function-key'],['AC','clear','function-key'],
+    ['7','7',''],['8','8',''],['9','9',''],['÷','÷','function-key'],
+    ['4','4',''],['5','5',''],['6','6',''],['×','×','function-key'],
+    ['1','1',''],['2','2',''],['3','3',''],['−','−','function-key'],
+    ['0','0',''],['.','.',''],['⌫','back','function-key'],['+','+','function-key'],
+    ['Ans','ans','function-key'],['±','sign','function-key'],[E.math('<msup><mi>x</mi><mn>2</mn></msup>'),'^2','function-key'],['=','equals','equals']
+  ];
+  const keyNames={'asin(':'Inverse sine','acos(':'Inverse cosine','atan(':'Inverse tangent','sqrt(':'Square root','^':'Power','clear':'Clear expression','back':'Backspace','sign':'Change expression sign','equals':'Calculate','ans':'Previous answer','^2':'Square'};
+  $('calcKeys').innerHTML=calcKeys.map(([label,insert,cls])=>`<button type="button" class="${cls}" data-insert="${E.esc(insert)}" aria-label="${E.esc(keyNames[insert]||label.replace(/<[^>]*>/g,''))}">${label}</button>`).join('');
+  function calcInsert(value){
+    const field=$('calcInput');
+    if(value==='equals'){try{const result=calculate(field.value,calcState.ans);calcState.ans=result;$('calcOutput').textContent=`= ${Number(result.toPrecision(12))}`;$('calcOutput').style.color='var(--m1)'}catch(e){$('calcOutput').textContent=e.message;$('calcOutput').style.color='var(--bad)'}return}
+    if(value==='clear'){field.value='';$('calcOutput').textContent='Angles in degrees';$('calcOutput').style.color='var(--m1)';field.focus();return}
+    if(value==='sign'){field.value=field.value.startsWith('−(')&&field.value.endsWith(')')?field.value.slice(2,-1):`−(${field.value||'0'})`;field.focus();field.setSelectionRange(field.value.length,field.value.length);return}
+    const start=field.selectionStart??field.value.length,end=field.selectionEnd??field.value.length;
+    if(value==='back'){const lo=start===end?Math.max(0,start-1):start;field.value=field.value.slice(0,lo)+field.value.slice(end);field.focus();field.setSelectionRange(lo,lo);return}
+    if(field.value.length+value.length>240){$('calcOutput').textContent='This expression is too long.';return}
+    field.value=field.value.slice(0,start)+value+field.value.slice(end);field.focus();field.setSelectionRange(start+value.length,start+value.length);
+  }
+  $('calcKeys').addEventListener('click',e=>{const b=e.target.closest('button[data-insert]');if(b)calcInsert(b.dataset.insert)});
+  $('calcInput').addEventListener('keydown',e=>{e.stopPropagation();if(e.key==='Enter'||e.key==='='){e.preventDefault();calcInsert('equals')}else if(e.key==='Escape'){e.preventDefault();closeCalculator()}});
+  function openCalculator(){const yes=$('calculator').hidden;$('calculator').hidden=!yes;$('calcBtn').setAttribute('aria-expanded',String(yes));if(yes){clampCalculator();$('calcInput').focus()}}
+  function closeCalculator(focus=true){const wasOpen=!$('calculator').hidden;$('calculator').hidden=true;$('calcBtn').setAttribute('aria-expanded','false');if(wasOpen&&focus&&state.active)$('calcBtn').focus()}
+  $('calcBtn').addEventListener('click',openCalculator);$('closeCalc').addEventListener('click',()=>closeCalculator());
+  function clampCalculator(){const c=$('calculator');if(c.hidden)return;const r=c.getBoundingClientRect();if(c.style.left){c.style.left=`${E.clamp(r.left,8,Math.max(8,innerWidth-r.width-8))}px`;c.style.top=`${E.clamp(r.top,8,Math.max(8,innerHeight-r.height-8))}px`}}
+  $('calcDrag').addEventListener('pointerdown',e=>{if(e.target.closest('button')||e.button!==0)return;const r=$('calculator').getBoundingClientRect();calcState.drag={dx:e.clientX-r.left,dy:e.clientY-r.top};$('calcDrag').setPointerCapture(e.pointerId);e.preventDefault()});
+  $('calcDrag').addEventListener('pointermove',e=>{if(!calcState.drag)return;const c=$('calculator');c.style.left=`${E.clamp(e.clientX-calcState.drag.dx,8,Math.max(8,innerWidth-c.offsetWidth-8))}px`;c.style.top=`${E.clamp(e.clientY-calcState.drag.dy,8,Math.max(8,innerHeight-c.offsetHeight-8))}px`;c.style.right='auto';c.style.bottom='auto'});
+  for(const type of ['pointerup','pointercancel'])$('calcDrag').addEventListener(type,()=>calcState.drag=null);
+  
+  $('teacherBtn').addEventListener('click',safe(()=>{$('teacherRecord').innerHTML=E.teacherHTML(state.history);$('teacherDialog').showModal()}));
+  $('reviewBody').addEventListener('click',safe(event=>{const button=event.target.closest('[data-review]');if(!button)return;const r=state.records[Number(button.dataset.review)];if(!r)return;const q=r.question;$('reviewTitle').textContent=`Brief ${r.number} · ${r.title}`;$('reviewContent').innerHTML=`<div class="review-result"><strong>${E.esc(r.quantity)}</strong><br>Your answer: ${E.fmt(r.input)} ${E.esc(r.unit)} · ${r.correct?'Accepted':'Outside range'}<br>Calculated answer: ${E.fmt(r.expected)} ${E.esc(r.unit)}</div><p>${E.esc(q.statement)}</p><div class="review-split"><div>${E.renderDiagram(q,{prefix:'review',forces:true})}</div><div class="workings">${E.workingHTML(q)}</div></div>`;$('reviewContent').querySelectorAll('[data-member]').forEach(g=>{g.removeAttribute('role');g.removeAttribute('tabindex')});$('reviewDialog').showModal()}));
+
+  const preview=E.createQuestion('udl',E.newHistory(),{scenarioIndex:0,ask:'A',variant:0,L:8.6,w:4.8,loads:[{P:24,a:3.1}]});
+  $('previewDrawing').innerHTML=E.renderDiagram(preview,{prefix:'preview'});
+  // The preview is an illustration, not a second interactive question.
+  $('previewDrawing').querySelectorAll('[data-member]').forEach(g=>{g.removeAttribute('role');g.removeAttribute('tabindex')});
+  return {state,startSession,renderQuestion,renderDrawing,checkCurrent,nextQuestion,finish,tick,calculate,setTheme};
+})();
+
+</script>
+</body></html>
